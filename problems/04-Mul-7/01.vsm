@@ -1,0 +1,11 @@
+imm i"3" $s1v2
+# 8x
+llsl $lm0v $aluf $lr0v
+llsl $lm8v $ls0v $lr8v
+llsl $lm16v $ls0v $lr16v
+llsl $lm24v $ls0v $lr24v
+# 8x - x
+lsub $lr0v $lm0v $ln0v
+lsub $lr8v $lm8v $ln8v
+lsub $lr16v $lm16v $ln16v
+lsub $lr24v $lm24v $ln24v
