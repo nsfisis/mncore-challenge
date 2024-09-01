@@ -1,0 +1,95 @@
+# 22.times do |i|
+#   j = i * 4
+#   puts "isub $s0 $m#{j}v $n#{j}v"     # 0 - x
+#   puts "isub $m#{j}v $s0 $omr1"       # x - 0
+#   puts "ipassa $m#{j}v $n#{j}v/$imr1" # x
+#   puts
+# end
+
+isub $s0 $m0v $n0v
+isub $m0v $s0 $omr1
+ipassa $m0v $n0v/$imr1
+
+isub $s0 $m4v $n4v
+isub $m4v $s0 $omr1
+ipassa $m4v $n4v/$imr1
+
+isub $s0 $m8v $n8v
+isub $m8v $s0 $omr1
+ipassa $m8v $n8v/$imr1
+
+isub $s0 $m12v $n12v
+isub $m12v $s0 $omr1
+ipassa $m12v $n12v/$imr1
+
+isub $s0 $m16v $n16v
+isub $m16v $s0 $omr1
+ipassa $m16v $n16v/$imr1
+
+isub $s0 $m20v $n20v
+isub $m20v $s0 $omr1
+ipassa $m20v $n20v/$imr1
+
+isub $s0 $m24v $n24v
+isub $m24v $s0 $omr1
+ipassa $m24v $n24v/$imr1
+
+isub $s0 $m28v $n28v
+isub $m28v $s0 $omr1
+ipassa $m28v $n28v/$imr1
+
+isub $s0 $m32v $n32v
+isub $m32v $s0 $omr1
+ipassa $m32v $n32v/$imr1
+
+isub $s0 $m36v $n36v
+isub $m36v $s0 $omr1
+ipassa $m36v $n36v/$imr1
+
+isub $s0 $m40v $n40v
+isub $m40v $s0 $omr1
+ipassa $m40v $n40v/$imr1
+
+isub $s0 $m44v $n44v
+isub $m44v $s0 $omr1
+ipassa $m44v $n44v/$imr1
+
+isub $s0 $m48v $n48v
+isub $m48v $s0 $omr1
+ipassa $m48v $n48v/$imr1
+
+isub $s0 $m52v $n52v
+isub $m52v $s0 $omr1
+ipassa $m52v $n52v/$imr1
+
+isub $s0 $m56v $n56v
+isub $m56v $s0 $omr1
+ipassa $m56v $n56v/$imr1
+
+isub $s0 $m60v $n60v
+isub $m60v $s0 $omr1
+ipassa $m60v $n60v/$imr1
+
+isub $s0 $m64v $n64v
+isub $m64v $s0 $omr1
+ipassa $m64v $n64v/$imr1
+
+isub $s0 $m68v $n68v
+isub $m68v $s0 $omr1
+ipassa $m68v $n68v/$imr1
+
+isub $s0 $m72v $n72v
+isub $m72v $s0 $omr1
+ipassa $m72v $n72v/$imr1
+
+isub $s0 $m76v $n76v
+isub $m76v $s0 $omr1
+ipassa $m76v $n76v/$imr1
+
+isub $s0 $m80v $n80v
+isub $m80v $s0 $omr1
+ipassa $m80v $n80v/$imr1
+
+isub $s0 $m84v $n84v
+isub $m84v $s0 $omr1
+ipassa $m84v $n84v/$imr1

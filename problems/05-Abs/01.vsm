@@ -1,0 +1,7 @@
+isub $s0 $m0v $r0v      # 0 - x
+isub $m0v $s0 $omr1     # x - 0
+ipassa $m0v $r4v/$imr1  # x
+isub $r0v $s0 $omr1     # -x - 0
+ipassa $r0v $s4v/$imr1  # -x
+nop
+iadd $r4v $s4v $n0v     # x or -x
