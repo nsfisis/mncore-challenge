@@ -4,7 +4,7 @@ imm f"-1.0" $ls0v
 # (40 / 8).times do |i|
 #   j = i * 8
 #   puts "fvadd $lm#{j}v $ls0v $omr1"
-#   puts "imm f"inf" $ln#{j}v/$imr1"
+#   puts "imm f\"inf\" $ln#{j}v/$imr1"
 #   puts
 # end
 

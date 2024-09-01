@@ -1,0 +1,16 @@
+imm f"-1.0" $ls0v
+imm f"inf" $lr0v
+
+# (40 / 8).times do |i|
+#   j = i * 8
+#   puts "fvadd $lm#{j}v $ls0v $omr1"
+#   puts "lpassa $lr0v $ln#{j}v/$imr1"
+#   puts
+# end
+
+fvadd $lm0v $ls0v $omr1
+lpassa $lr0v $ln0v/$imr1; fvadd $lm8v $ls0v $omr1
+lpassa $lr0v $ln8v/$imr1; fvadd $lm16v $ls0v $omr1
+lpassa $lr0v $ln16v/$imr1; fvadd $lm24v $ls0v $omr1
+lpassa $lr0v $ln24v/$imr1; fvadd $lm32v $ls0v $omr1
+lpassa $lr0v $ln32v/$imr1
