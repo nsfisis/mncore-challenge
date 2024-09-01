@@ -1,0 +1,20 @@
+imm h"2.0" $ls0v
+
+# (96 / 8).times do |i|
+#   j = i * 8
+#   puts "hvmulr $lm#{j}v $ls0v $ln#{j}v"
+# end
+
+# hvmulr $lm0v $ls0v $ln0v
+hvmulr $lm0v $aluf $ln0v
+hvmulr $lm8v $ls0v $ln8v
+hvmulr $lm16v $ls0v $ln16v
+hvmulr $lm24v $ls0v $ln24v
+hvmulr $lm32v $ls0v $ln32v
+hvmulr $lm40v $ls0v $ln40v
+hvmulr $lm48v $ls0v $ln48v
+hvmulr $lm56v $ls0v $ln56v
+hvmulr $lm64v $ls0v $ln64v
+hvmulr $lm72v $ls0v $ln72v
+hvmulr $lm80v $ls0v $ln80v
+hvmulr $lm88v $ls0v $ln88v
