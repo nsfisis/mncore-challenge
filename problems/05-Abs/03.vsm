@@ -1,0 +1,72 @@
+# 22.times do |i|
+#   j = i * 4
+#   puts "imax $s0 $m#{j}v $n#{j}v $omr1"     # max(0, x)
+#   puts "isub $s0 $m#{j}v $n#{j}v/$imr1"       # -x
+#   puts
+# end
+
+imax $s0 $m0v $n0v $omr1
+isub $s0 $m0v $n0v/$imr1
+
+imax $s0 $m4v $n4v $omr1
+isub $s0 $m4v $n4v/$imr1
+
+imax $s0 $m8v $n8v $omr1
+isub $s0 $m8v $n8v/$imr1
+
+imax $s0 $m12v $n12v $omr1
+isub $s0 $m12v $n12v/$imr1
+
+imax $s0 $m16v $n16v $omr1
+isub $s0 $m16v $n16v/$imr1
+
+imax $s0 $m20v $n20v $omr1
+isub $s0 $m20v $n20v/$imr1
+
+imax $s0 $m24v $n24v $omr1
+isub $s0 $m24v $n24v/$imr1
+
+imax $s0 $m28v $n28v $omr1
+isub $s0 $m28v $n28v/$imr1
+
+imax $s0 $m32v $n32v $omr1
+isub $s0 $m32v $n32v/$imr1
+
+imax $s0 $m36v $n36v $omr1
+isub $s0 $m36v $n36v/$imr1
+
+imax $s0 $m40v $n40v $omr1
+isub $s0 $m40v $n40v/$imr1
+
+imax $s0 $m44v $n44v $omr1
+isub $s0 $m44v $n44v/$imr1
+
+imax $s0 $m48v $n48v $omr1
+isub $s0 $m48v $n48v/$imr1
+
+imax $s0 $m52v $n52v $omr1
+isub $s0 $m52v $n52v/$imr1
+
+imax $s0 $m56v $n56v $omr1
+isub $s0 $m56v $n56v/$imr1
+
+imax $s0 $m60v $n60v $omr1
+isub $s0 $m60v $n60v/$imr1
+
+imax $s0 $m64v $n64v $omr1
+isub $s0 $m64v $n64v/$imr1
+
+imax $s0 $m68v $n68v $omr1
+isub $s0 $m68v $n68v/$imr1
+
+imax $s0 $m72v $n72v $omr1
+isub $s0 $m72v $n72v/$imr1
+
+imax $s0 $m76v $n76v $omr1
+isub $s0 $m76v $n76v/$imr1
+
+imax $s0 $m80v $n80v $omr1
+isub $s0 $m80v $n80v/$imr1
+
+imax $s0 $m84v $n84v $omr1
+isub $s0 $m84v $n84v/$imr1
