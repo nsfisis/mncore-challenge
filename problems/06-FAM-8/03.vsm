@@ -1,0 +1,26 @@
+imm f"8.0" $lr0v
+imm f"64.0" $ls0v
+
+# (128 / 8).times do |i|
+#   j = i * 8
+#   puts "fvfma $lm#{j}v $lr0v $ls0v $ln#{j}v"
+# end
+
+# fvfma $lm0v $lr0v $ls0v $ln0v
+fvfma $lm0v $lr0v $aluf $ln0v
+
+fvfma $lm8v $lr0v $ls0v $ln8v
+fvfma $lm16v $lr0v $ls0v $ln16v
+fvfma $lm24v $lr0v $ls0v $ln24v
+fvfma $lm32v $lr0v $ls0v $ln32v
+fvfma $lm40v $lr0v $ls0v $ln40v
+fvfma $lm48v $lr0v $ls0v $ln48v
+fvfma $lm56v $lr0v $ls0v $ln56v
+fvfma $lm64v $lr0v $ls0v $ln64v
+fvfma $lm72v $lr0v $ls0v $ln72v
+fvfma $lm80v $lr0v $ls0v $ln80v
+fvfma $lm88v $lr0v $ls0v $ln88v
+fvfma $lm96v $lr0v $ls0v $ln96v
+fvfma $lm104v $lr0v $ls0v $ln104v
+fvfma $lm112v $lr0v $ls0v $ln112v
+fvfma $lm120v $lr0v $ls0v $ln120v
