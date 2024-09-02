@@ -1,0 +1,50 @@
+# n = 6909045637428952499
+# bin = n.to_s(2).rjust(64, '0')
+# ds = bin.each_char.each_slice(8).map(&:join)
+# 
+# 8.times { |i| puts "[#{i}] = #{ds[i]}" }
+# puts
+# 8.times { |i| puts "[#{i}] = #{ds[8-i-1]}" }
+
+imm ui"0x000000FF" $s0
+imm ui"0x0000FF00" $s1
+imm ui"0x00FF0000" $s2
+imm ui"0xFF000000" $s3
+imm i"8" $s4
+imm i"24" $s5
+
+iand $m0 $s0 $r0
+iand $m0 $s1 $r1
+iand $m0 $s2 $r2
+iand $m0 $s3 $r3
+
+iand $m1 $s0 $r4
+iand $m1 $s1 $r5
+iand $m1 $s2 $r6
+iand $m1 $s3 $r7
+
+ilsl $r0 $s5 $r8 # <<24
+ilsl $r1 $s4 $r9 # <<8
+uilsr $r2 $s4 $r10 # >>8
+uilsr $r3 $s5 $r11 # >>24
+
+ilsl $r4 $s5 $r12 # <<24
+ilsl $r5 $s4 $r13 # <<8
+uilsr $r6 $s4 $r14 # >>8
+uilsr $r7 $s5 $r15 # >>24
+
+nop
+nop
+ipassa $r[10,11,14,15] $s[10,11,14,15]
+nop
+nop
+ior $r[8,9,12,13] $s[10,11,14,15] $r[16,17,18,19]
+nop
+nop
+ipassa $r[16,17,18,19] $s[16,17,18,19]
+nop
+nop
+ior $r[16,18,0,0] $s[17,19,0,0] $r[22,23,24,25]
+nop
+nop
+ipassa $r[22,23,0,0] $n[1,0,2,3]
