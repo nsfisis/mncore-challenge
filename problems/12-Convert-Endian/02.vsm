@@ -1,0 +1,24 @@
+# n = 6909045637428952499
+# bin = n.to_s(2).rjust(64, '0')
+# ds = bin.each_char.each_slice(8).map(&:join)
+# 
+# 8.times { |i| puts "[#{i}] = #{ds[i]}" }
+# puts
+# 8.times { |i| puts "[#{i}] = #{ds[8-i-1]}" }
+
+imm ui"0x000000FF" $s0
+imm ui"0x0000FF00" $s1
+imm ui"0x00FF0000" $s2
+imm ui"0xFF000000" $s3
+imm i"8" $s4
+imm i"24" $s5
+
+iand $m0 $s0v $r0v
+iand $m1 $s0v $r4v
+
+nop
+ilsl $r[0,1,4,5] $s[5,4,5,4] $r8v
+uilsr $r[2,3,6,7] $s[4,5,4,5] $nowrite
+ior $r8v $aluf $s16v $r16v
+nop
+ior $r[0,0,16,18] $s[0,0,17,19] $n[3,2,1,0]
