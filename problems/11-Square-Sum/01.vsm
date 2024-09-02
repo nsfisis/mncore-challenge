@@ -1,0 +1,32 @@
+imm i"4" $s257v2
+imm i"1" $s265
+llsl $mabid $ls256 $t
+nop
+
+lpassa $lmt0v $lr0v          # $lm[16mab+0,16mab+2,16mab+4,16mab+6]
+lpassa $lmt8v $lr8v          # $lm[16mab+8,16mab+10,16mab+12,16mab+14]
+
+dvmulu $lmt0v $lr0v $ls0v    # $ls[0,2,4,6] = x^2 @ PE0,PE1
+dvmulu $lmt8v $lr8v $ls8v    # $ls[8,10,12,14] = x^2 @ PE0,PE1
+
+dvmuld $lmt0v $lr0v $ls16v    # $ls[16,18,20,22] = x^2 @ PE2,PE3
+dvmuld $lmt8v $lr8v $ls24v    # $ls[24,26,28,30] = x^2 @ PE2,PE3
+
+l1bmrdfadd $ls0v $lb0
+l1bmm $lbi $lm256v # $lm[256,258,260,262] = (x^2) x16
+l1bmrdfadd $ls8v $lb0
+l1bmm $lbi $lm264v # $lm[264,266,268,270] = (x^2) x16
+
+l1bmrdfadd $ls16v $lb0
+l1bmm $lbi $lm272v # $lm[272,274,276,278] = (x^2) x16
+l1bmrdfadd $ls24v $lb0
+l1bmm $lbi $lm280v # $lm[280,282,284,286] = (x^2) x16
+
+llsl $mabid $ls264 $t
+nop
+lpassa $lmt256v $ls0v   # $lm[2mab,?,?,?]
+
+nop
+
+l1bmrdfadd $ls0v $lb0
+l1bmm $lbi $ln0v
