@@ -1,0 +1,18 @@
+imm i"1" $s1
+
+# llsl $lm2048v $ls0 $t
+llsl $lm2048v $aluf $t
+nop
+lpassa $lmt0 $ln0v
+
+llsl $lm2056v $ls0 $t
+nop
+lpassa $lmt0 $ln8v
+
+llsl $lm2064v $ls0 $t
+nop
+lpassa $lmt0 $ln16v
+
+llsl $lm2072v $ls0 $t
+nop
+lpassa $lmt0 $ln24v
