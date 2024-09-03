@@ -1,0 +1,86 @@
+ipassa $m0v $s1v2
+ipassa $m4v $s9v2
+ipassa $m8v $s17v2
+ipassa $m12v $s25v2
+ipassa $m16v $s33v2
+ipassa $m20v $s41v2
+ipassa $m24v $s49v2
+ipassa $m28v $s57v2
+
+imm i"1" $r1v
+imm i"2" $r2v
+imm i"0" $r3v
+imm i"1" $r4v
+imm i"2" $r5v
+imm i"0" $r6v
+imm i"1" $r7v
+imm i"2" $r8v
+imm i"0" $r9v
+imm i"1" $r10v
+imm i"2" $r11v
+zero $r12v
+
+lpassa $lr[0,2,4,6]  $lm256v
+lpassa $lr[8,10,0,2] $lm264v
+lpassa $lr[4,6,8,10] $lm272v
+lpassa $lr[0,2,4,6]  $lm280v
+lpassa $lr[8,10,0,2] $lm288v
+lpassa $lr[4,6,8,10] $lm296v
+lpassa $lr[0,2,4,6]  $lm304v
+lpassa $lr[8,10,0,2] $lm312v
+lpassa $lr[4,6,8,10] $lm320v
+lpassa $lr[0,2,4,6]  $lm328v
+lpassa $lr[8,10,0,2] $lm336v
+lpassa $lr[4,6,8,10] $lm344v
+lpassa $lr[0,2,4,6]  $lm352v
+lpassa $lr[8,10,0,2] $lm360v
+lpassa $lr[4,6,8,10] $lm368v
+lpassa $lr[0,2,4,6]  $lm376v
+lpassa $lr[8,10,0,2] $lm384v
+lpassa $lr[4,6,8,10] $lm392v
+lpassa $lr[0,2,4,6]  $lm400v
+lpassa $lr[8,10,0,2] $lm408v
+lpassa $lr[4,6,8,10] $lm416v
+lpassa $lr[0,2,4,6]  $lm424v
+lpassa $lr[8,10,0,2] $lm432v
+lpassa $lr[4,6,8,10] $lm440v
+lpassa $lr[0,2,4,6]  $lm448v
+lpassa $lr[8,10,0,2] $lm456v
+lpassa $lr[4,6,8,10] $lm464v
+lpassa $lr[0,2,4,6]  $lm472v
+lpassa $lr[8,10,0,2] $lm480v
+lpassa $lr[4,6,8,10] $lm488v
+lpassa $lr[0,2,4,6]  $lm496v
+lpassa $lr[8,10,0,2] $lm504v
+
+ipassa $ls0v $t
+nop
+ipassa $mt256 $n0v
+
+ipassa $ls8v $t
+nop
+ipassa $mt256 $n4v
+
+ipassa $ls16v $t
+nop
+ipassa $mt256 $n8v
+
+ipassa $ls24v $t
+nop
+ipassa $mt256 $n12v
+
+ipassa $ls32v $t
+nop
+ipassa $mt256 $n16v
+
+ipassa $ls40v $t
+nop
+ipassa $mt256 $n20v
+
+ipassa $ls48v $t
+nop
+ipassa $mt256 $n24v
+
+ipassa $ls56v $t
+nop
+ipassa $mt256 $n28v
