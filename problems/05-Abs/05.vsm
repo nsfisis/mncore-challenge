@@ -1,0 +1,29 @@
+# (88 / 8).times do |i|
+#   j = i * 8
+#   puts "isub $ls0 $lm#{j}v $nowrite"   # -x
+#   puts "imax $aluf $lm#{j}v $ln#{j}v"   # max(-x, x)
+#   puts
+# end
+
+isub $ls0 $lm0v $nowrite
+imax $aluf $lm0v $ln0v
+isub $ls0 $lm8v $nowrite
+imax $aluf $lm8v $ln8v
+isub $ls0 $lm16v $nowrite
+imax $aluf $lm16v $ln16v
+isub $ls0 $lm24v $nowrite
+imax $aluf $lm24v $ln24v
+isub $ls0 $lm32v $nowrite
+imax $aluf $lm32v $ln32v
+isub $ls0 $lm40v $nowrite
+imax $aluf $lm40v $ln40v
+isub $ls0 $lm48v $nowrite
+imax $aluf $lm48v $ln48v
+isub $ls0 $lm56v $nowrite
+imax $aluf $lm56v $ln56v
+isub $ls0 $lm64v $nowrite
+imax $aluf $lm64v $ln64v
+isub $ls0 $lm72v $nowrite
+imax $aluf $lm72v $ln72v
+isub $ls0 $lm80v $nowrite
+imax $aluf $lm80v $ln80v
