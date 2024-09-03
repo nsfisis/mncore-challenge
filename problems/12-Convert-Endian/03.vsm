@@ -9,14 +9,10 @@
 # puts
 # puts
 
-imm i"8" $s1v2
-imm i"16" $s9v2
+imm s"8" $ls0v
+imm i"16" $ls8v
 imm i"32" $s17v2
 
-sbsl $lm0v $ls0v $lr0v
-
-d getd $lr0 1
-quit
-
+sbsl $lm0v $ls0v $nowrite
 ibsl $aluf $ls8v $nowrite
 lbsl $aluf $ls16v $ln0v
