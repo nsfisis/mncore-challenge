@@ -1,0 +1,93 @@
+imm f"8388608" $r0/1000
+imm f"0.3333333333333333333333" $r4
+
+# (32 / 4).times do |i|
+#   j = i * 4
+#   # itof
+#   puts "ior $m#{j}v $r0 $nowrite"
+#   puts "fvadd $aluf -$r0 $nowrite"
+#   # /3
+#   puts "fvmul $mauf $r4 $nowrite"
+#   # floor
+#   puts "ffloor $mauf $nowrite"
+#   # ftoi
+#   puts "fftoi $aluf $s0v"
+#   # x3
+#   puts "ipackbit $aluf $r8 $nowrite"
+#   puts "iadd $s0v $aluf $nowrite"
+#   # %3
+#   puts "isub $m#{j}v $aluf $n#{j}v"
+#   puts
+# end
+
+ior $m0v $r0 $nowrite
+fvadd $aluf -$r0 $nowrite
+fvmul $mauf $r4 $nowrite
+ffloor $mauf $nowrite
+fftoi $aluf $s0v
+ipackbit $aluf $r8 $nowrite
+iadd $s0v $aluf $nowrite
+isub $m0v $aluf $n0v
+
+ior $m4v $r0 $nowrite
+fvadd $aluf -$r0 $nowrite
+fvmul $mauf $r4 $nowrite
+ffloor $mauf $nowrite
+fftoi $aluf $s0v
+ipackbit $aluf $r8 $nowrite
+iadd $s0v $aluf $nowrite
+isub $m4v $aluf $n4v
+
+ior $m8v $r0 $nowrite
+fvadd $aluf -$r0 $nowrite
+fvmul $mauf $r4 $nowrite
+ffloor $mauf $nowrite
+fftoi $aluf $s0v
+ipackbit $aluf $r8 $nowrite
+iadd $s0v $aluf $nowrite
+isub $m8v $aluf $n8v
+
+ior $m12v $r0 $nowrite
+fvadd $aluf -$r0 $nowrite
+fvmul $mauf $r4 $nowrite
+ffloor $mauf $nowrite
+fftoi $aluf $s0v
+ipackbit $aluf $r8 $nowrite
+iadd $s0v $aluf $nowrite
+isub $m12v $aluf $n12v
+
+ior $m16v $r0 $nowrite
+fvadd $aluf -$r0 $nowrite
+fvmul $mauf $r4 $nowrite
+ffloor $mauf $nowrite
+fftoi $aluf $s0v
+ipackbit $aluf $r8 $nowrite
+iadd $s0v $aluf $nowrite
+isub $m16v $aluf $n16v
+
+ior $m20v $r0 $nowrite
+fvadd $aluf -$r0 $nowrite
+fvmul $mauf $r4 $nowrite
+ffloor $mauf $nowrite
+fftoi $aluf $s0v
+ipackbit $aluf $r8 $nowrite
+iadd $s0v $aluf $nowrite
+isub $m20v $aluf $n20v
+
+ior $m24v $r0 $nowrite
+fvadd $aluf -$r0 $nowrite
+fvmul $mauf $r4 $nowrite
+ffloor $mauf $nowrite
+fftoi $aluf $s0v
+ipackbit $aluf $r8 $nowrite
+iadd $s0v $aluf $nowrite
+isub $m24v $aluf $n24v
+
+ior $m28v $r0 $nowrite
+fvadd $aluf -$r0 $nowrite
+fvmul $mauf $r4 $nowrite
+ffloor $mauf $nowrite
+fftoi $aluf $s0v
+ipackbit $aluf $r8 $nowrite
+iadd $s0v $aluf $nowrite
+isub $m28v $aluf $n28v
