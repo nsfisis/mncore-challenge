@@ -1,0 +1,51 @@
+imm f"8388608" $r0v
+imm f"0.3333333333333333333333" $r4v
+
+# (32 / 8).times do |i|
+#   j = i * 8
+#   # itof
+#   puts "ior $lm#{j}v $lr0 $nowrite"
+#   puts "fvadd $aluf -$lr0 $nowrite"
+#   # /3
+#   puts "fvmul $mauf $lr4 $nowrite"
+#   # ftoi
+#   puts "fftoi $mauf $ls0v"
+#   # x3
+#   puts "ipackbit $aluf $lr8 $nowrite"
+#   puts "iadd $ls0v $aluf $nowrite"
+#   # %3
+#   puts "isub $lm#{j}v $aluf $ln#{j}v"
+#   puts
+# end
+
+ior $lm0v $lr0 $nowrite
+fvadd $aluf -$lr0 $nowrite
+fvmul $mauf $lr4 $nowrite
+fftoi $mauf $ls0v
+ipackbit $aluf $lr8 $nowrite
+iadd $ls0v $aluf $nowrite
+isub $lm0v $aluf $ln0v
+
+ior $lm8v $lr0 $nowrite
+fvadd $aluf -$lr0 $nowrite
+fvmul $mauf $lr4 $nowrite
+fftoi $mauf $ls0v
+ipackbit $aluf $lr8 $nowrite
+iadd $ls0v $aluf $nowrite
+isub $lm8v $aluf $ln8v
+
+ior $lm16v $lr0 $nowrite
+fvadd $aluf -$lr0 $nowrite
+fvmul $mauf $lr4 $nowrite
+fftoi $mauf $ls0v
+ipackbit $aluf $lr8 $nowrite
+iadd $ls0v $aluf $nowrite
+isub $lm16v $aluf $ln16v
+
+ior $lm24v $lr0 $nowrite
+fvadd $aluf -$lr0 $nowrite
+fvmul $mauf $lr4 $nowrite
+fftoi $mauf $ls0v
+ipackbit $aluf $lr8 $nowrite
+iadd $ls0v $aluf $nowrite
+isub $lm24v $aluf $ln24v
