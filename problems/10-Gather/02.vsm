@@ -1,0 +1,9 @@
+lpackbit $lm2048v $ls0 $t
+lpackbit $lm2056v $ls0 $nowrite
+dvpassa $lmt0 $ln0v; lpassa $aluf $t
+lpackbit $lm2064v $ls0 $nowrite
+dvpassa $lmt0 $ln8v; lpassa $aluf $t
+lpackbit $lm2072v $ls0 $nowrite
+dvpassa $lmt0 $ln16v; lpassa $aluf $t
+nop
+dvpassa $lmt0 $ln24v
