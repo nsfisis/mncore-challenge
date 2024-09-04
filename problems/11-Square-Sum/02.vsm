@@ -1,0 +1,22 @@
+imm i"4" $nowrite
+llsl $mabid $aluf $t
+nop
+
+lpassa $llmt0v $llr0v          # $lm[16mab+0,...,16mab+14]
+nop
+
+dvmulu $lmt0v $lr0v $ls0v
+dvfmad $lmt0v $lr0v $mauf $ls0v
+dvmulu $lmt8v $lr8v $ls8v
+dvfmad $lmt8v $lr8v $mauf $ls8v
+
+l1bmrdfadd $ls0v $lb0
+l1bmm $lbi $lm256v
+l1bmrdfadd $ls8v $lb0
+l1bmm $lbi $lm264v
+
+lpackbit $mabid $ls256 $t
+nop
+
+l1bmrdfadd $lmt256v $lb0
+l1bmm $lbi $ln0v
