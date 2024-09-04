@@ -1,0 +1,28 @@
+lpackbit $subpeid $ls0 $t
+nop
+l1bmd $lmt0v8 $lb0
+
+# 4.times do |cycle|
+#   16.times do |mab|
+#     4.times do |pe|
+#       l1b_addr = cycle * 4 * 16 + mab * 4 + pe
+#       puts "#{"%3d" % l1b_addr}: mab[#{"%2d" % mab}] pe[#{pe}] $lm#{cycle * 8 + pe * 2}"
+#     end
+#   end
+# end
+
+l1bmd+1 $lb0 $lm1024
+l1bmd+2 $lb0 $lm1024
+l1bmd+3 $lb0 $lm1024
+l1bmd+4 $lb0 $lm1024
+l1bmd+5 $lb0 $lm1024
+l1bmd+6 $lb0 $lm1024
+l1bmd+7 $lb0 $lm1024
+l1bmd+8 $lb0 $lm1024
+l1bmd+9 $lb0 $lm1024
+l1bmd+10 $lb0 $lm1024
+l1bmd+11 $lb0 $lm1024
+l1bmd+12 $lb0 $lm1024
+l1bmd+13 $lb0 $lm1024
+l1bmd+14 $lb0 $lm1024
+l1bmd+15 $lb0 $lm1024
