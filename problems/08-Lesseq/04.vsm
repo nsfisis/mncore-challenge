@@ -1,0 +1,15 @@
+# (40 / 8).times do |i|
+#   j = i * 8
+#   puts "fvadd $lm#{j}v $ls0v $omr1"
+#   puts "inot $msb1 $ln#{j}v/$imr1"
+#   puts
+# end
+
+imm f"-1.0" $ls0v
+
+fvadd $lm0v $aluf $omr1
+inot $msb1 $ln0v/$imr1; fvadd $lm8v $ls0v $omr1
+inot $msb1 $ln8v/$imr1; fvadd $lm16v $ls0v $omr1
+inot $msb1 $ln16v/$imr1; fvadd $lm24v $ls0v $omr1
+inot $msb1 $ln24v/$imr1; fvadd $lm32v $ls0v $omr1
+inot $msb1 $ln32v/$imr1
