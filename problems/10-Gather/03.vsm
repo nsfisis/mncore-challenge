@@ -1,0 +1,9 @@
+imm i"3" $ls8
+llsl $subpeid $aluf $t
+nop
+lpackbit $lmt2048v $ls0 $t
+nop
+lpassa $lmt0 $ln0v
+msr $aluf $ln8v
+msr $aluf $ln16v
+msr $aluf $ln24v
