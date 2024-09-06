@@ -1,0 +1,18 @@
+imm i"4" $nowrite
+llsl $mabid $aluf $t   # t=16*mab
+nop
+
+dvmulu $lmt0v $lmt0v $nowrite
+dvfmad $lmt0v $lmt0v $mauf $nowrite
+dvmulu $lmt8v $lmt8v $ls0v; l1bmrdfadd $mauf $lb0
+dvfmad $lmt8v $lmt8v $mauf $ls0v
+
+l1bmm $lbi $lm256v
+l1bmrdfadd $ls0v $lb0
+l1bmm $lbi $lm264v
+
+lpackbit $mabid $ls256 $t
+nop
+
+l1bmrdfadd $lmt256v $lb0
+l1bmm $lbi $ln0v
