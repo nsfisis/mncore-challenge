@@ -1,0 +1,3 @@
+imm s"0b0100000111111000" $ls0v
+sbsl $m[1,0,1,0] $aluf $nowrite; hvaddr $aluf $aluf $ls8v
+ibsl $aluf $mauf $n0v

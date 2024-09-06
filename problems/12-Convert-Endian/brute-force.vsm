@@ -1,0 +1,119 @@
+# 12345678 12345678
+# s
+#  eeeeee
+#        p pppppppp
+
+32.times do |i|
+  bits = i.to_s(2).rjust(4, "0")
+  puts "imm s\"0b0100000#{bits}1000\" $nowrite"
+  puts "noforward; hvaddr $aluf $aluf $s#{i}v"
+  puts "hvmulr $aluf $aluf $r#{i}v"
+end
+puts "d geth $s0n0c0b0m0p0 32"
+puts "d geth $r0n0c0b0m0p0 32"
+
+s = <<EOS
+EOS
+
+s.each_line do |l|
+  puts $1.to_i(16) % 32 if l =~ /\((0x[0-9a-fA-F]+,)/
+end
+
+imm s"0b010000000001000" $nowrite
+noforward; hvaddr $aluf $aluf $s0v
+hvmulr $aluf $aluf $r0v
+imm s"0b010000000011000" $nowrite
+noforward; hvaddr $aluf $aluf $s1v
+hvmulr $aluf $aluf $r1v
+imm s"0b010000000101000" $nowrite
+noforward; hvaddr $aluf $aluf $s2v
+hvmulr $aluf $aluf $r2v
+imm s"0b010000000111000" $nowrite
+noforward; hvaddr $aluf $aluf $s3v
+hvmulr $aluf $aluf $r3v
+imm s"0b010000001001000" $nowrite
+noforward; hvaddr $aluf $aluf $s4v
+hvmulr $aluf $aluf $r4v
+imm s"0b010000001011000" $nowrite
+noforward; hvaddr $aluf $aluf $s5v
+hvmulr $aluf $aluf $r5v
+imm s"0b010000001101000" $nowrite
+noforward; hvaddr $aluf $aluf $s6v
+hvmulr $aluf $aluf $r6v
+imm s"0b010000001111000" $nowrite
+noforward; hvaddr $aluf $aluf $s7v
+hvmulr $aluf $aluf $r7v
+imm s"0b010000010001000" $nowrite
+noforward; hvaddr $aluf $aluf $s8v
+hvmulr $aluf $aluf $r8v
+imm s"0b010000010011000" $nowrite
+noforward; hvaddr $aluf $aluf $s9v
+hvmulr $aluf $aluf $r9v
+imm s"0b010000010101000" $nowrite
+noforward; hvaddr $aluf $aluf $s10v
+hvmulr $aluf $aluf $r10v
+imm s"0b010000010111000" $nowrite
+noforward; hvaddr $aluf $aluf $s11v
+hvmulr $aluf $aluf $r11v
+imm s"0b010000011001000" $nowrite
+noforward; hvaddr $aluf $aluf $s12v
+hvmulr $aluf $aluf $r12v
+imm s"0b010000011011000" $nowrite
+noforward; hvaddr $aluf $aluf $s13v
+hvmulr $aluf $aluf $r13v
+imm s"0b010000011101000" $nowrite
+noforward; hvaddr $aluf $aluf $s14v
+hvmulr $aluf $aluf $r14v
+imm s"0b010000011111000" $nowrite
+noforward; hvaddr $aluf $aluf $s15v
+hvmulr $aluf $aluf $r15v
+imm s"0b0100000100001000" $nowrite
+noforward; hvaddr $aluf $aluf $s16v
+hvmulr $aluf $aluf $r16v
+imm s"0b0100000100011000" $nowrite
+noforward; hvaddr $aluf $aluf $s17v
+hvmulr $aluf $aluf $r17v
+imm s"0b0100000100101000" $nowrite
+noforward; hvaddr $aluf $aluf $s18v
+hvmulr $aluf $aluf $r18v
+imm s"0b0100000100111000" $nowrite
+noforward; hvaddr $aluf $aluf $s19v
+hvmulr $aluf $aluf $r19v
+imm s"0b0100000101001000" $nowrite
+noforward; hvaddr $aluf $aluf $s20v
+hvmulr $aluf $aluf $r20v
+imm s"0b0100000101011000" $nowrite
+noforward; hvaddr $aluf $aluf $s21v
+hvmulr $aluf $aluf $r21v
+imm s"0b0100000101101000" $nowrite
+noforward; hvaddr $aluf $aluf $s22v
+hvmulr $aluf $aluf $r22v
+imm s"0b0100000101111000" $nowrite
+noforward; hvaddr $aluf $aluf $s23v
+hvmulr $aluf $aluf $r23v
+imm s"0b0100000110001000" $nowrite
+noforward; hvaddr $aluf $aluf $s24v
+hvmulr $aluf $aluf $r24v
+imm s"0b0100000110011000" $nowrite
+noforward; hvaddr $aluf $aluf $s25v
+hvmulr $aluf $aluf $r25v
+imm s"0b0100000110101000" $nowrite
+noforward; hvaddr $aluf $aluf $s26v
+hvmulr $aluf $aluf $r26v
+imm s"0b0100000110111000" $nowrite
+noforward; hvaddr $aluf $aluf $s27v
+hvmulr $aluf $aluf $r27v
+imm s"0b0100000111001000" $nowrite
+noforward; hvaddr $aluf $aluf $s28v
+hvmulr $aluf $aluf $r28v
+imm s"0b0100000111011000" $nowrite
+noforward; hvaddr $aluf $aluf $s29v
+hvmulr $aluf $aluf $r29v
+imm s"0b0100000111101000" $nowrite
+noforward; hvaddr $aluf $aluf $s30v
+hvmulr $aluf $aluf $r30v
+imm s"0b0100000111111000" $nowrite # !!!
+noforward; hvaddr $aluf $aluf $s31v
+hvmulr $aluf $aluf $r31v
+d geth $s0n0c0b0m0p0 32
+d geth $r0n0c0b0m0p0 32
