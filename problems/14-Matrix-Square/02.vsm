@@ -1,0 +1,17 @@
+hmwrite $llm0vr $ly0; hbfn/9 $llm0vr $lr0v
+hmwrite $llm16vr $ly4; hbfn/9 $llm16vr $lr8v
+hmwrite $llm32vr $ly8; hbfn/9 $llm32vr $lr16v
+hmwrite $llm48vr $ly12; hbfn/9 $llm48vr $lr24v
+
+hmwrite $llr0v $llx0; hmread $lly0 $nowrite
+hmwrite $llr16v $llx8; hmread $lly8 $nowrite; hbfn/9 $mreadf $lls0v
+hbfn/9 $mreadf $llr0v
+
+hmmul $lx $ls0v $lln0v
+hmmul $lx $ls8v $lln16v
+hmmul $lx $lr0v $lln32v
+hmmul $lx $lr8v $lln48v
+
+# BF, write to $x
+# write to $y, read from $y^T, BF
+# mmul
