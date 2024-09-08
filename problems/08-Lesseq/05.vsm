@@ -1,0 +1,7 @@
+imm f"inf" $llr0v
+imm f"-1.0" $lls0v
+
+hvadd $llm0vr $aluf $omr1
+lpassa $llr0v $lln0v/$llimr1; hvadd $llm16vr $lls0v $omr1
+lpassa $llr0v $lln16v/$llimr1; hvadd $llm32vr $lls0v $omr1
+lpassa $llr0v $lln32v/$llimr1
