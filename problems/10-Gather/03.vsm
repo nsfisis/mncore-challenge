@@ -1,4 +1,4 @@
-imm i"3" $ls8
+imm i"3" $nowrite
 llsl $subpeid $aluf $t
 nop
 lpackbit $lmt2048v $ls0 $t

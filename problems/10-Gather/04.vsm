@@ -1,0 +1,8 @@
+lpackbit $subpeid $ls0 $t
+nop
+lpackbit $lmt[2048,2056,2064,2072] $ls0 $t
+nop
+lpassa $lmt0 $ln[0,8,16,24]
+msr $aluf $ln[2,10,18,26]
+msr $aluf $ln[4,12,20,28]
+msr $aluf $ln[6,14,22,30]
