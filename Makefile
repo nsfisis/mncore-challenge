@@ -1,4 +1,4 @@
-all: matrix_square
+all: hello_world
 
 matrix_square_testcase_1:
 	./judge problems/14-Matrix-Square/testcase_1_double_4x4.vsm problems/14-Matrix-Square/answer_1_double_4x4.vsm
@@ -8,3 +8,6 @@ matrix_square_testcase_2:
 
 matrix_square:
 	./judge problems/14-Matrix-Square/testcase.vsm problems/14-Matrix-Square/02.vsm
+
+hello_world:
+	./judge example/hello_world/testcase.vsm example/hello_world/example.vsm
