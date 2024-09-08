@@ -1,0 +1,6 @@
+lpackbit $lm2048v4j0 $ls0 $t
+lpackbit $lm2064v4j0 $ls0 $nowrite
+dvpassa $lmt0 $ln0v4j0; lpassa $aluf $t
+msr $mauf $ln0v4
+dvpassa $lmt0 $ln16v4j0
+msr $mauf $ln16v4

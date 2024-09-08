@@ -1,0 +1,8 @@
+lpackbit $lm2048v4j0 $ls0 $t
+lpackbit $lm2064v4j0 $ls0 $nowrite
+dvpassa $lmt0 $ln0v4j0 $lr0v; lpassa $aluf $t
+nop
+dvpassa $lmt0 $ln16v4j0 $lr8v
+
+msr $lr0v $ln[0,4,8,12]
+msr $lr8v $ln[16,20,24,28]
