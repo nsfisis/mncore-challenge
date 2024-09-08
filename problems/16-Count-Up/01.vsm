@@ -3,52 +3,62 @@ imm i"0b111" $s1/1000
 imm i"0b1110" $s2/1000
 imm i"6" $s3/1000
 
-imm i"1" $r0/1000
-imm i"2" $r1/1000
-
 # + l1bid x 16
 ilsl $l1bid $s0 $nowrite
-iadd $aluf $r0v $r0v
+iadd $aluf $s128v $s128v
 # + (peid & 0b111) x 2
 iand $peid $s1 $nowrite
 ipackbit $aluf $n0 $nowrite
-iadd $aluf $r0v $r0v
-# + (mabid & 0b10) x 64
+iadd $aluf $s128v $s128v
+# + (mabid & 0b1110) x 64
 iand $mabid $s2 $nowrite
 ilsl $aluf $s3 $nowrite
-iadd $aluf $r0v $r0v
+iadd $aluf $s128v $s128v
+ipassa $aluf $s132v
+# $ls128v = offset (i32 x 8)
 
-nop/2
+imm i"4096" $ls256v
+
+imm i"1" $r0/1000
+imm i"2" $r1/1000
+imm i"1025" $r2/1000
+imm i"1026" $r3/1000
+imm i"2049" $r4/1000
+imm i"2050" $r5/1000
+imm i"3073" $r6/1000
+imm i"3074" $r7/1000
+
+# (4096/256/2).times { |i| puts "iadd $aluf $ls256v $lr#{8*i}v" }
+iadd $lr0v $ls128v $lr0v
+iadd $aluf $ls256v $lr8v
+iadd $aluf $ls256v $lr16v
+iadd $aluf $ls256v $lr24v
+iadd $aluf $ls256v $lr32v
+iadd $aluf $ls256v $lr40v
+iadd $aluf $ls256v $lr48v
+iadd $aluf $ls256v $lr56v
 
 # 1 LW / pe / cycle
 # 64 LW / cycle
 # 256 LW / step
-# (4096/256).times { |i| puts "l1bmd $lr#{4*i}v $lb#{256*i}" }
+# (4096/256/2).times { |i| puts "l1bmd $lr#{8*i}v $lb#{256*i}" }
 l1bmd $lr0v $lb0
-l1bmd $lr4v $lb256
-l1bmd $lr8v $lb512
-l1bmd $lr12v $lb768
-l1bmd $lr16v $lb1024
-l1bmd $lr20v $lb1280
-l1bmd $lr24v $lb1536
-l1bmd $lr28v $lb1792
-l1bmd $lr32v $lb2048
-l1bmd $lr36v $lb2304
-l1bmd $lr40v $lb2560
-l1bmd $lr44v $lb2816
-l1bmd $lr48v $lb3072
-l1bmd $lr52v $lb3328
-l1bmd $lr56v $lb3584
-l1bmd $lr60v $lb3840
+l1bmd $lr8v $lb256
+l1bmd $lr16v $lb512
+l1bmd $lr24v $lb768
+l1bmd $lr32v $lb1024
+l1bmd $lr40v $lb1280
+l1bmd $lr48v $lb1536
+l1bmd $lr56v $lb1792
 
 # 8 LW / l1b / cycle
 # 64 LW / cycle
 # 256 LW / step
-# (32768/256).times { |i| puts "l2bmd $lb#{32*i} $lc#{256*i}" }
-l2bmd $lb0 $lc0       # OK
-l2bmd $lb32 $lc256    # OK
-l2bmd $lb64 $lc512    # OK
-l2bmd $lb96 $lc768    # OK
+# (32768/256/2).times { |i| puts "l2bmd $lb#{32*i} $lc#{256*i}" }
+l2bmd $lb0 $lc0
+l2bmd $lb32 $lc256
+l2bmd $lb64 $lc512
+l2bmd $lb96 $lc768
 l2bmd $lb128 $lc1024
 l2bmd $lb160 $lc1280
 l2bmd $lb192 $lc1536
@@ -109,70 +119,8 @@ l2bmd $lb1920 $lc15360
 l2bmd $lb1952 $lc15616
 l2bmd $lb1984 $lc15872
 l2bmd $lb2016 $lc16128
-l2bmd $lb2048 $lc16384
-l2bmd $lb2080 $lc16640
-l2bmd $lb2112 $lc16896
-l2bmd $lb2144 $lc17152
-l2bmd $lb2176 $lc17408
-l2bmd $lb2208 $lc17664
-l2bmd $lb2240 $lc17920
-l2bmd $lb2272 $lc18176
-l2bmd $lb2304 $lc18432
-l2bmd $lb2336 $lc18688
-l2bmd $lb2368 $lc18944
-l2bmd $lb2400 $lc19200
-l2bmd $lb2432 $lc19456
-l2bmd $lb2464 $lc19712
-l2bmd $lb2496 $lc19968
-l2bmd $lb2528 $lc20224
-l2bmd $lb2560 $lc20480
-l2bmd $lb2592 $lc20736
-l2bmd $lb2624 $lc20992
-l2bmd $lb2656 $lc21248
-l2bmd $lb2688 $lc21504
-l2bmd $lb2720 $lc21760
-l2bmd $lb2752 $lc22016
-l2bmd $lb2784 $lc22272
-l2bmd $lb2816 $lc22528
-l2bmd $lb2848 $lc22784
-l2bmd $lb2880 $lc23040
-l2bmd $lb2912 $lc23296
-l2bmd $lb2944 $lc23552
-l2bmd $lb2976 $lc23808
-l2bmd $lb3008 $lc24064
-l2bmd $lb3040 $lc24320
-l2bmd $lb3072 $lc24576
-l2bmd $lb3104 $lc24832
-l2bmd $lb3136 $lc25088
-l2bmd $lb3168 $lc25344
-l2bmd $lb3200 $lc25600
-l2bmd $lb3232 $lc25856
-l2bmd $lb3264 $lc26112
-l2bmd $lb3296 $lc26368
-l2bmd $lb3328 $lc26624
-l2bmd $lb3360 $lc26880
-l2bmd $lb3392 $lc27136
-l2bmd $lb3424 $lc27392
-l2bmd $lb3456 $lc27648
-l2bmd $lb3488 $lc27904
-l2bmd $lb3520 $lc28160
-l2bmd $lb3552 $lc28416
-l2bmd $lb3584 $lc28672
-l2bmd $lb3616 $lc28928
-l2bmd $lb3648 $lc29184
-l2bmd $lb3680 $lc29440
-l2bmd $lb3712 $lc29696
-l2bmd $lb3744 $lc29952
-l2bmd $lb3776 $lc30208
-l2bmd $lb3808 $lc30464
-l2bmd $lb3840 $lc30720
-l2bmd $lb3872 $lc30976
-l2bmd $lb3904 $lc31232
-l2bmd $lb3936 $lc31488
-l2bmd $lb3968 $lc31744
-l2bmd $lb4000 $lc32000
-l2bmd $lb4032 $lc32256
-l2bmd $lb4064 $lc32512
+
+nop
 
 # 16 LW / cycle
 # 64 LW / step
