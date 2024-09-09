@@ -1,0 +1,6 @@
+imm f"-1.0" $lls0v
+
+fvadd $lm0v $aluf $omr1; inot $msb1 $lr0v
+inot $msb1 $ln0v/$imr1; hvadd $llm8vr $lls0v $omr1
+lpassa $llr0 $lln8v/$llimr1; hvadd $llm24vr $lls0v $omr1
+lpassa $llr0 $lln24v/$llimr1
