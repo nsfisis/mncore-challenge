@@ -1,4 +1,7 @@
-imm i"0" $s1/1000
+# $ls[0:32] = j < k
+# $lr[0:32] = A[j] > A[k]
+# $lr[0:32] = (j < k) and (A[j] > A[k])
+# imm i"0" $s1/1000
 imm i"1" $s3/1000
 imm i"2" $s5/1000
 imm i"3" $s7/1000
@@ -14,6 +17,95 @@ imm i"12" $s25/1000
 imm i"13" $s27/1000
 imm i"14" $s29/1000
 imm i"15" $s31/1000
+imm i"1" $s33/1000
 
-lsub $mabid $ls0v $nowrite
-llnot $aluf $ls0v
+# 4.times { |i| puts "lsub $mabid $ls#{i*8}v $omr1"; puts "lpassa/$imr1 $ls32 $ls#{i*8}v" }
+lsub $mabid $ls0v $omr1
+lpassa/$imr1 $ls32 $ls0v
+lsub $mabid $ls8v $omr1
+lpassa/$imr1 $ls32 $ls8v
+lsub $mabid $ls16v $omr1
+lpassa/$imr1 $ls32 $ls16v
+lsub $mabid $ls24v $omr1
+lpassa/$imr1 $ls32 $ls24v
+
+lpackbit $mabid $ln0 $t
+lpassa $llm0v $llr0v
+lpassa $llm16v $llr16v
+
+# 4.times { |i| puts "lsub $lmt0 $lr#{i*8}v $omr1"; puts "lpassa/$imr1 $ls32 $lr#{i*8}v" }
+# 4.times { |i| puts "llnot $lr#{i*8}v $lr#{i*8}v" }
+lsub $lmt0 $lr0v $omr1
+lpassa/$imr1 $ls32 $lr0v
+lsub $lmt0 $lr8v $omr1
+lpassa/$imr1 $ls32 $lr8v
+lsub $lmt0 $lr16v $omr1
+lpassa/$imr1 $ls32 $lr16v
+lsub $lmt0 $lr24v $omr1
+lpassa/$imr1 $ls32 $lr24v
+llnot $lr0v $lr0v
+llnot $lr8v $lr8v
+llnot $lr16v $lr16v
+llnot $lr24v $lr24v
+
+# d getd $ls0n0c0b0p0 16
+# d getd $lr0n0c0b0p0 16
+
+# 4.times { |i| puts "land $ls#{i*8}v $lr#{i*8}v $lr#{i*8}v" }
+land $ls0v $lr0v $lr0v
+land $ls8v $lr8v $lr8v
+land $ls16v $lr16v $lr16v
+land $ls24v $lr24v $lr24v
+
+# d getd $lr0n0c0b0p0 16
+
+nop
+
+# 4.times { |i| puts "l1bmrliadd $lr#{i*8}v $lb0"; puts "l1bmm $lbi $lm#{i*8}v" }
+l1bmrliadd $lr0v $lb0
+l1bmm $lbi $lm0v
+l1bmrliadd $lr8v $lb0
+l1bmm $lbi $lm8v
+l1bmrliadd $lr16v $lb0
+l1bmm $lbi $lm16v
+l1bmrliadd $lr24v $lb0
+l1bmm $lbi $lm24v
+
+lpackbit $mabid $ln0 $t
+nop
+l1bmrliadd $lmt0 $lb0
+l1bmm $lbi $ln0
+
+# 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+# 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+# 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0
+# 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0
+# 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0
+# 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0
+# 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0
+# 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0
+# 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0
+# 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0
+# 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0
+# 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0
+# 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0
+# 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0
+# 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0
+# 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+
+# 0 0 1 0 1 1 0 0 1 0 1 1 1 0 0 0
+# 1 0 1 1 1 1 0 1 1 0 1 1 1 1 0 1
+# 0 0 0 0 1 0 0 0 1 0 1 1 1 0 0 0
+# 0 0 1 0 1 1 0 0 1 0 1 1 1 0 0 0
+# 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0
+# 0 0 0 0 1 0 0 0 1 0 1 1 1 0 0 0
+# 1 1 1 1 1 1 0 1 1 0 1 1 1 1 0 1
+# 1 0 1 1 1 1 0 0 1 0 1 1 1 1 0 0
+# 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0
+# 1 1 1 1 1 1 0 1 1 0 1 1 1 1 0 1
+# 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+# 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0
+# 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+# 0 0 1 0 1 1 0 0 1 0 1 1 1 0 0 0
+# 1 1 1 1 1 1 0 1 1 0 1 1 1 1 0 1
+# 1 0 1 1 1 1 0 0 1 0 1 1 1 1 0 0
