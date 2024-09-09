@@ -1,0 +1,4 @@
+fvfma $lm0v $lm0v -$lm0v $omr1; inot $msb1 $lr0v
+inot $msb1 $ln0v/$imr1; hvfma $llm8vr $llm8vr -$llm8v $omr1
+lpassa $llr0 $lln8v/$llimr1; hvfma $llm24vr $llm24vr -$llm24v $omr1
+lpassa $llr0 $lln24v/$llimr1
