@@ -1,3 +1,37 @@
+# (32 / 8).times do |i|
+#   j = i * 8
+#   # itof (1)
+#   puts "ior $lm#{j}v $lr0 $nowrite"
+# end
+# puts
+# (32 / 8).times do |i|
+#   j = i * 8
+#   # itof (2)
+#   puts "fvadd $aluf -$lr0 $ls#{j}v"
+# end
+# puts
+# (32 / 8).times do |i|
+#   j = i * 8
+#   # /3
+#   puts "fvmul $ls#{j}v $lr4 $nowrite"
+# end
+# puts
+# (32 / 8).times do |i|
+#   j = i * 8
+#   # ftoi
+#   puts "fftoi $mauf $ls#{j+32}v"
+# end
+# puts
+# (32 / 8).times do |i|
+#   j = i * 8
+#   # x3
+#   puts "ipackbit $ls#{j+32}v $lr8 $nowrite"
+#   puts "iadd $ls#{j+32}v $aluf $nowrite"
+#   # %3
+#   puts "isub $lm#{j}v $aluf $ln#{j}v"
+#   puts
+# end
+
 imm f"8388608" $r0v
 imm f"0.3333333333333333333333" $r4v
 

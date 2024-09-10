@@ -1,4 +1,4 @@
-all: inversion
+all: mod3
 
 matrix_square_testcase_1:
 	./judge problems/14-Matrix-Square/testcase_1_double_4x4.vsm problems/14-Matrix-Square/answer_1_double_4x4.vsm
