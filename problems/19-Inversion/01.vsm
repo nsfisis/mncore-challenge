@@ -1,0 +1,414 @@
+# j = $l2bid x 8 + $l1bid
+# $n128 = j
+# $s256 = 1
+# $s272 = 0
+# $ls[0:128] = k (from 0 to 63)
+# $ls[0:128] = j < k
+# $lr[0:128] = A[k]
+# $lr[0:128] = A[j] > A[k]
+# $lr[0:128] = (j < k) and (A[j] > A[k])
+
+# 64.times { |i| puts "imm i\"#{i}\" $s#{2*i}v/1100 # $s#{2*i} = $s#{2*i+1} = #{i}" }
+# imm i"0" $s0v/1100 # $s0 = $s1 = 0
+imm i"1" $s2v/1100 # $s2 = $s3 = 1
+imm i"2" $s4v/1100 # $s4 = $s5 = 2
+imm i"3" $s6v/1100 # $s6 = $s7 = 3
+imm i"4" $s8v/1100 # $s8 = $s9 = 4
+imm i"5" $s10v/1100 # $s10 = $s11 = 5
+imm i"6" $s12v/1100 # $s12 = $s13 = 6
+imm i"7" $s14v/1100 # $s14 = $s15 = 7
+imm i"8" $s16v/1100 # $s16 = $s17 = 8
+imm i"9" $s18v/1100 # $s18 = $s19 = 9
+imm i"10" $s20v/1100 # $s20 = $s21 = 10
+imm i"11" $s22v/1100 # $s22 = $s23 = 11
+imm i"12" $s24v/1100 # $s24 = $s25 = 12
+imm i"13" $s26v/1100 # $s26 = $s27 = 13
+imm i"14" $s28v/1100 # $s28 = $s29 = 14
+imm i"15" $s30v/1100 # $s30 = $s31 = 15
+imm i"16" $s32v/1100 # $s32 = $s33 = 16
+imm i"17" $s34v/1100 # $s34 = $s35 = 17
+imm i"18" $s36v/1100 # $s36 = $s37 = 18
+imm i"19" $s38v/1100 # $s38 = $s39 = 19
+imm i"20" $s40v/1100 # $s40 = $s41 = 20
+imm i"21" $s42v/1100 # $s42 = $s43 = 21
+imm i"22" $s44v/1100 # $s44 = $s45 = 22
+imm i"23" $s46v/1100 # $s46 = $s47 = 23
+imm i"24" $s48v/1100 # $s48 = $s49 = 24
+imm i"25" $s50v/1100 # $s50 = $s51 = 25
+imm i"26" $s52v/1100 # $s52 = $s53 = 26
+imm i"27" $s54v/1100 # $s54 = $s55 = 27
+imm i"28" $s56v/1100 # $s56 = $s57 = 28
+imm i"29" $s58v/1100 # $s58 = $s59 = 29
+imm i"30" $s60v/1100 # $s60 = $s61 = 30
+imm i"31" $s62v/1100 # $s62 = $s63 = 31
+imm i"32" $s64v/1100 # $s64 = $s65 = 32
+imm i"33" $s66v/1100 # $s66 = $s67 = 33
+imm i"34" $s68v/1100 # $s68 = $s69 = 34
+imm i"35" $s70v/1100 # $s70 = $s71 = 35
+imm i"36" $s72v/1100 # $s72 = $s73 = 36
+imm i"37" $s74v/1100 # $s74 = $s75 = 37
+imm i"38" $s76v/1100 # $s76 = $s77 = 38
+imm i"39" $s78v/1100 # $s78 = $s79 = 39
+imm i"40" $s80v/1100 # $s80 = $s81 = 40
+imm i"41" $s82v/1100 # $s82 = $s83 = 41
+imm i"42" $s84v/1100 # $s84 = $s85 = 42
+imm i"43" $s86v/1100 # $s86 = $s87 = 43
+imm i"44" $s88v/1100 # $s88 = $s89 = 44
+imm i"45" $s90v/1100 # $s90 = $s91 = 45
+imm i"46" $s92v/1100 # $s92 = $s93 = 46
+imm i"47" $s94v/1100 # $s94 = $s95 = 47
+imm i"48" $s96v/1100 # $s96 = $s97 = 48
+imm i"49" $s98v/1100 # $s98 = $s99 = 49
+imm i"50" $s100v/1100 # $s100 = $s101 = 50
+imm i"51" $s102v/1100 # $s102 = $s103 = 51
+imm i"52" $s104v/1100 # $s104 = $s105 = 52
+imm i"53" $s106v/1100 # $s106 = $s107 = 53
+imm i"54" $s108v/1100 # $s108 = $s109 = 54
+imm i"55" $s110v/1100 # $s110 = $s111 = 55
+imm i"56" $s112v/1100 # $s112 = $s113 = 56
+imm i"57" $s114v/1100 # $s114 = $s115 = 57
+imm i"58" $s116v/1100 # $s116 = $s117 = 58
+imm i"59" $s118v/1100 # $s118 = $s119 = 59
+imm i"60" $s120v/1100 # $s120 = $s121 = 60
+imm i"61" $s122v/1100 # $s122 = $s123 = 61
+imm i"62" $s124v/1100 # $s124 = $s125 = 62
+imm i"63" $s126v/1100 # $s126 = $s127 = 63
+
+# d getf $ls0n0c0b0m0p0 64
+# quit
+
+ilsl $l2bid $s6 $nowrite
+iadd $l1bid $aluf $n128v
+imm i"1" $s256v
+nop
+
+# d getf $ls256n0c0b0m0p0 1
+# d getf $ln128m0p0 1
+# quit
+
+# (128/8).times { |i| puts "isub $ln128 $ls#{i*8}v $omr1"; puts "lpassa/$imr1 $ls256 $ls#{i*8}v" }
+isub $ln128 $ls0v $omr1
+lpassa/$imr1 $ls256 $ls0v
+isub $ln128 $ls8v $omr1
+lpassa/$imr1 $ls256 $ls8v
+isub $ln128 $ls16v $omr1
+lpassa/$imr1 $ls256 $ls16v
+isub $ln128 $ls24v $omr1
+lpassa/$imr1 $ls256 $ls24v
+isub $ln128 $ls32v $omr1
+lpassa/$imr1 $ls256 $ls32v
+isub $ln128 $ls40v $omr1
+lpassa/$imr1 $ls256 $ls40v
+isub $ln128 $ls48v $omr1
+lpassa/$imr1 $ls256 $ls48v
+isub $ln128 $ls56v $omr1
+lpassa/$imr1 $ls256 $ls56v
+isub $ln128 $ls64v $omr1
+lpassa/$imr1 $ls256 $ls64v
+isub $ln128 $ls72v $omr1
+lpassa/$imr1 $ls256 $ls72v
+isub $ln128 $ls80v $omr1
+lpassa/$imr1 $ls256 $ls80v
+isub $ln128 $ls88v $omr1
+lpassa/$imr1 $ls256 $ls88v
+isub $ln128 $ls96v $omr1
+lpassa/$imr1 $ls256 $ls96v
+isub $ln128 $ls104v $omr1
+lpassa/$imr1 $ls256 $ls104v
+isub $ln128 $ls112v $omr1
+lpassa/$imr1 $ls256 $ls112v
+isub $ln128 $ls120v $omr1
+lpassa/$imr1 $ls256 $ls120v
+
+# d getf $ls0m0p0 64
+# quit
+
+lpackbit $ln128 $ls272 $t
+# (128/16).times { |i| puts "lpassa $llm#{i*16}v $llr#{i*16}v" }
+lpassa $llm0v $llr0v
+lpassa $llm16v $llr16v
+lpassa $llm32v $llr32v
+lpassa $llm48v $llr48v
+lpassa $llm64v $llr64v
+lpassa $llm80v $llr80v
+lpassa $llm96v $llr96v
+lpassa $llm112v $llr112v
+
+# d getd $tm0p0 4
+# quit
+
+# (128/8).times { |i| puts "isub $lmt0 $lr#{i*8}v $omr1"; puts "ipassa/$imr1 $ls256 $lr#{i*8}v" }
+# (128/8).times { |i| puts "ilnot $lr#{i*8}v $lr#{i*8}v" }
+isub $lmt0 $lr0v $omr1
+ipassa/$imr1 $ls256 $lr0v
+isub $lmt0 $lr8v $omr1
+ipassa/$imr1 $ls256 $lr8v
+isub $lmt0 $lr16v $omr1
+ipassa/$imr1 $ls256 $lr16v
+isub $lmt0 $lr24v $omr1
+ipassa/$imr1 $ls256 $lr24v
+isub $lmt0 $lr32v $omr1
+ipassa/$imr1 $ls256 $lr32v
+isub $lmt0 $lr40v $omr1
+ipassa/$imr1 $ls256 $lr40v
+isub $lmt0 $lr48v $omr1
+ipassa/$imr1 $ls256 $lr48v
+isub $lmt0 $lr56v $omr1
+ipassa/$imr1 $ls256 $lr56v
+isub $lmt0 $lr64v $omr1
+ipassa/$imr1 $ls256 $lr64v
+isub $lmt0 $lr72v $omr1
+ipassa/$imr1 $ls256 $lr72v
+isub $lmt0 $lr80v $omr1
+ipassa/$imr1 $ls256 $lr80v
+isub $lmt0 $lr88v $omr1
+ipassa/$imr1 $ls256 $lr88v
+isub $lmt0 $lr96v $omr1
+ipassa/$imr1 $ls256 $lr96v
+isub $lmt0 $lr104v $omr1
+ipassa/$imr1 $ls256 $lr104v
+isub $lmt0 $lr112v $omr1
+ipassa/$imr1 $ls256 $lr112v
+isub $lmt0 $lr120v $omr1
+ipassa/$imr1 $ls256 $lr120v
+ilnot $lr0v $lr0v
+ilnot $lr8v $lr8v
+ilnot $lr16v $lr16v
+ilnot $lr24v $lr24v
+ilnot $lr32v $lr32v
+ilnot $lr40v $lr40v
+ilnot $lr48v $lr48v
+ilnot $lr56v $lr56v
+ilnot $lr64v $lr64v
+ilnot $lr72v $lr72v
+ilnot $lr80v $lr80v
+ilnot $lr88v $lr88v
+ilnot $lr96v $lr96v
+ilnot $lr104v $lr104v
+ilnot $lr112v $lr112v
+ilnot $lr120v $lr120v
+
+# d getf $lr0m0p0 64
+# quit
+
+nop
+
+# (128/8).times { |i| puts "iand $ls#{i*8}v $lr#{i*8}v $lr#{i*8}v" }
+iand $ls0v $lr0v $lr0v
+iand $ls8v $lr8v $lr8v
+iand $ls16v $lr16v $lr16v
+iand $ls24v $lr24v $lr24v
+iand $ls32v $lr32v $lr32v
+iand $ls40v $lr40v $lr40v
+iand $ls48v $lr48v $lr48v
+iand $ls56v $lr56v $lr56v
+iand $ls64v $lr64v $lr64v
+iand $ls72v $lr72v $lr72v
+iand $ls80v $lr80v $lr80v
+iand $ls88v $lr88v $lr88v
+iand $ls96v $lr96v $lr96v
+iand $ls104v $lr104v $lr104v
+iand $ls112v $lr112v $lr112v
+iand $ls120v $lr120v $lr120v
+
+# d getf $lr0m0p0 64
+# quit
+
+# (128/8).times { |i| puts "l1bmd $lr#{i*8}v $lb#{i*256}" }
+l1bmd $lr0v $lb0
+l1bmd $lr8v $lb256
+l1bmd $lr16v $lb512
+l1bmd $lr24v $lb768
+l1bmd $lr32v $lb1024
+l1bmd $lr40v $lb1280
+l1bmd $lr48v $lb1536
+l1bmd $lr56v $lb1792
+l1bmd $lr64v $lb2048
+l1bmd $lr72v $lb2304
+l1bmd $lr80v $lb2560
+l1bmd $lr88v $lb2816
+l1bmd $lr96v $lb3072
+l1bmd $lr104v $lb3328
+l1bmd $lr112v $lb3584
+l1bmd $lr120v $lb3840
+
+# (4096/64).times { |i| puts "l2bmriiadd $lb#{i*64} $lc#{i*64}" }
+l2bmriiadd $lb0 $lc0
+l2bmriiadd $lb64 $lc64
+l2bmriiadd $lb128 $lc128
+l2bmriiadd $lb192 $lc192
+l2bmriiadd $lb256 $lc256
+l2bmriiadd $lb320 $lc320
+l2bmriiadd $lb384 $lc384
+l2bmriiadd $lb448 $lc448
+l2bmriiadd $lb512 $lc512
+l2bmriiadd $lb576 $lc576
+l2bmriiadd $lb640 $lc640
+l2bmriiadd $lb704 $lc704
+l2bmriiadd $lb768 $lc768
+l2bmriiadd $lb832 $lc832
+l2bmriiadd $lb896 $lc896
+l2bmriiadd $lb960 $lc960
+l2bmriiadd $lb1024 $lc1024
+l2bmriiadd $lb1088 $lc1088
+l2bmriiadd $lb1152 $lc1152
+l2bmriiadd $lb1216 $lc1216
+l2bmriiadd $lb1280 $lc1280
+l2bmriiadd $lb1344 $lc1344
+l2bmriiadd $lb1408 $lc1408
+l2bmriiadd $lb1472 $lc1472
+l2bmriiadd $lb1536 $lc1536
+l2bmriiadd $lb1600 $lc1600
+l2bmriiadd $lb1664 $lc1664
+l2bmriiadd $lb1728 $lc1728
+l2bmriiadd $lb1792 $lc1792
+l2bmriiadd $lb1856 $lc1856
+l2bmriiadd $lb1920 $lc1920
+l2bmriiadd $lb1984 $lc1984
+l2bmriiadd $lb2048 $lc2048
+l2bmriiadd $lb2112 $lc2112
+l2bmriiadd $lb2176 $lc2176
+l2bmriiadd $lb2240 $lc2240
+l2bmriiadd $lb2304 $lc2304
+l2bmriiadd $lb2368 $lc2368
+l2bmriiadd $lb2432 $lc2432
+l2bmriiadd $lb2496 $lc2496
+l2bmriiadd $lb2560 $lc2560
+l2bmriiadd $lb2624 $lc2624
+l2bmriiadd $lb2688 $lc2688
+l2bmriiadd $lb2752 $lc2752
+l2bmriiadd $lb2816 $lc2816
+l2bmriiadd $lb2880 $lc2880
+l2bmriiadd $lb2944 $lc2944
+l2bmriiadd $lb3008 $lc3008
+l2bmriiadd $lb3072 $lc3072
+l2bmriiadd $lb3136 $lc3136
+l2bmriiadd $lb3200 $lc3200
+l2bmriiadd $lb3264 $lc3264
+l2bmriiadd $lb3328 $lc3328
+l2bmriiadd $lb3392 $lc3392
+l2bmriiadd $lb3456 $lc3456
+l2bmriiadd $lb3520 $lc3520
+l2bmriiadd $lb3584 $lc3584
+l2bmriiadd $lb3648 $lc3648
+l2bmriiadd $lb3712 $lc3712
+l2bmriiadd $lb3776 $lc3776
+l2bmriiadd $lb3840 $lc3840
+l2bmriiadd $lb3904 $lc3904
+l2bmriiadd $lb3968 $lc3968
+l2bmriiadd $lb4032 $lc4032
+
+nop
+
+mvriiadd/n4096 $lc0 $p0@0
+mvb/n4096 $p0@0 $lc0
+
+nop
+nop
+
+# (4096/64).times { |i| puts "l2bmb $lc#{i*64} $lb#{i*64}" }
+l2bmb $lc0 $lb0
+l2bmb $lc64 $lb64
+l2bmb $lc128 $lb128
+l2bmb $lc192 $lb192
+l2bmb $lc256 $lb256
+l2bmb $lc320 $lb320
+l2bmb $lc384 $lb384
+l2bmb $lc448 $lb448
+l2bmb $lc512 $lb512
+l2bmb $lc576 $lb576
+l2bmb $lc640 $lb640
+l2bmb $lc704 $lb704
+l2bmb $lc768 $lb768
+l2bmb $lc832 $lb832
+l2bmb $lc896 $lb896
+l2bmb $lc960 $lb960
+l2bmb $lc1024 $lb1024
+l2bmb $lc1088 $lb1088
+l2bmb $lc1152 $lb1152
+l2bmb $lc1216 $lb1216
+l2bmb $lc1280 $lb1280
+l2bmb $lc1344 $lb1344
+l2bmb $lc1408 $lb1408
+l2bmb $lc1472 $lb1472
+l2bmb $lc1536 $lb1536
+l2bmb $lc1600 $lb1600
+l2bmb $lc1664 $lb1664
+l2bmb $lc1728 $lb1728
+l2bmb $lc1792 $lb1792
+l2bmb $lc1856 $lb1856
+l2bmb $lc1920 $lb1920
+l2bmb $lc1984 $lb1984
+l2bmb $lc2048 $lb2048
+l2bmb $lc2112 $lb2112
+l2bmb $lc2176 $lb2176
+l2bmb $lc2240 $lb2240
+l2bmb $lc2304 $lb2304
+l2bmb $lc2368 $lb2368
+l2bmb $lc2432 $lb2432
+l2bmb $lc2496 $lb2496
+l2bmb $lc2560 $lb2560
+l2bmb $lc2624 $lb2624
+l2bmb $lc2688 $lb2688
+l2bmb $lc2752 $lb2752
+l2bmb $lc2816 $lb2816
+l2bmb $lc2880 $lb2880
+l2bmb $lc2944 $lb2944
+l2bmb $lc3008 $lb3008
+l2bmb $lc3072 $lb3072
+l2bmb $lc3136 $lb3136
+l2bmb $lc3200 $lb3200
+l2bmb $lc3264 $lb3264
+l2bmb $lc3328 $lb3328
+l2bmb $lc3392 $lb3392
+l2bmb $lc3456 $lb3456
+l2bmb $lc3520 $lb3520
+l2bmb $lc3584 $lb3584
+l2bmb $lc3648 $lb3648
+l2bmb $lc3712 $lb3712
+l2bmb $lc3776 $lb3776
+l2bmb $lc3840 $lb3840
+l2bmb $lc3904 $lb3904
+l2bmb $lc3968 $lb3968
+l2bmb $lc4032 $lb4032
+
+# (128/8).times { |i| puts "l1bmd $lb#{i*256} $lm#{i*8}v" }
+l1bmd $lb0 $lm0v
+l1bmd $lb256 $lm8v
+l1bmd $lb512 $lm16v
+l1bmd $lb768 $lm24v
+l1bmd $lb1024 $lm32v
+l1bmd $lb1280 $lm40v
+l1bmd $lb1536 $lm48v
+l1bmd $lb1792 $lm56v
+l1bmd $lb2048 $lm64v
+l1bmd $lb2304 $lm72v
+l1bmd $lb2560 $lm80v
+l1bmd $lb2816 $lm88v
+l1bmd $lb3072 $lm96v
+l1bmd $lb3328 $lm104v
+l1bmd $lb3584 $lm112v
+l1bmd $lb3840 $lm120v
+
+nop
+nop
+
+l1bmd $lmt0 $lb0
+
+nop
+nop
+
+l2bmriiadd $lb0 $lc0
+mvriiadd/n64 $lc0 $p0@0
+mvb/n64 $p0@0 $lc0
+
+nop
+nop
+nop
+
+l2bmb $lc0 $lb0
+
+nop
+nop
+
+l1bmd $lb0 $ln0v
