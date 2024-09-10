@@ -8,7 +8,7 @@ M = 自分の点
 | 問題            | m   | M   | m-M |
 |-----------------|-----|-----|-----|
 | Mul 7           |  80 |  80 |   0 |
-| Abs             |  80 |  68 |  12 |
+| Abs             |  94 |  68 |  26 |
 | FAM 8           |  90 |  90 |   0 |
 | FMul 2          | 100 |  85 |  15 |
 | Lesseq          | 100 | 100 |   0 |
@@ -20,9 +20,9 @@ M = 自分の点
 | Matrix Square   | 100 |  92 |   8 |
 | Contains        |  25 |  17 |   8 |
 | Count Up        |  64 |  33 |  31 |
-| Transpose MAB   |  67 |  17 |  50 |
-| Inversion Small |  63 |  28 |  35 |
-| Inversion       |  54 |  19 |  35 |
+| Transpose MAB   |  69 |  51 |  18 |
+| Inversion Small |  55 |  28 |  27 |
+| Inversion       |  52 |  19 |  33 |
 
 # 短縮テクニックメモ
 
