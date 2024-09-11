@@ -1,0 +1,106 @@
+imm i"3" $s1v2
+imm f"8388608" $s4v
+# 0x4b000000
+# 0b01001011000000000000000000000000
+#    eeeeeeee
+imm f"7.0" $s8v
+
+# 8x
+llsl $lm0v $aluf $lr0v
+llsl $lm8v $ls0v $lr8v
+llsl $lm16v $ls0v $lr16v
+llsl $lm24v $ls0v $lr24v
+# 8x - x
+lsub $lr0v $lm0v $ln0v
+lsub $lr8v $lm8v $ln8v
+lsub $lr16v $lm16v $ln16v
+lsub $lr24v $lm24v $ln24v
+
+
+ior $lm0v $ls4 $nowrite
+ior $lm8v $ls4 $nowrite; fvadd $aluf -$ls4 $lr0v
+ior $lm16v $ls4 $nowrite; fvadd $aluf -$ls4 $lr8v
+ior $lm24v $ls4 $nowrite; fvadd $aluf -$ls4 $lr16v
+fvadd $aluf -$ls4 $lr24v
+
+fvmul $lr0v $ls8 $nowrite
+fvmul $lr8v $ls8 $nowrite; fftoi $mauf $ln0v
+fvmul $lr16v $ls8 $nowrite; fftoi $mauf $ln8v
+fvmul $lr24v $ls8 $nowrite; fftoi $mauf $ln16v
+fftoi $mauf $ln24v
+
+
+
+
+
+
+# 0b01000011010000000000000000000000
+
+imm i"0b01000011010000000000000000000000" $s4v
+imm f"7.0" $s8v
+imm i"0" $r12v
+
+fvpassa $s4v $m0v2
+nop
+nop
+dvfma $lm0v $ls8 -$lr12 $nowrite
+dftoi $mauf $ln0v
+
+
+
+
+imm i"0b01000011010000000000000000000000" $s4
+imm f"7.0" $s8v
+imm i"0" $r12v
+
+# d getf $m0n0c0b0m0p0 8
+
+fvpassa $s4 $m0v2
+nop
+nop
+
+
+d getf $m0n0c0b0m0p0 8
+d getd $lm0n0c0b0m0p0 4
+
+
+dvadd $lm0v -$ls4 $lm0v
+
+d getf $m0n0c0b0m0p0 8
+d getd $ls4n0c0b0m0p0 1
+d getd $lm0n0c0b0m0p0 4
+quit
+
+nop
+dvfmau $lm0v $ls8 -$lr12 $nowrite
+dvfmad $lm0v $ls8 $mauf $nowrite
+dftoi $mauf $ln0v
+
+
+
+imm i"0b01000011010000000000000000000000" $s4/1000
+imm i"0b01000000000111000000000000000000" $s6/1000
+imm i"0b01000011011011000000000000000000" $r12/1000
+
+# d getf $m0n0c0b0m0p0 8
+
+# d getd $ls4n0c0b0m0p0 1
+# d getd $ls6n0c0b0m0p0 1
+# d getd $lr12n0c0b0m0p0 1
+# quit
+
+fvpassa $s4 $m0v2
+nop/2
+
+# d getf $m0n0c0b0m0p0 8
+# d getd $lm0n0c0b0m0p0 4
+#
+# dvadd $lm0v -$ls4 $lm0v
+#
+# d getf $m0n0c0b0m0p0 8
+# d getd $lm0n0c0b0m0p0 4
+# quit
+
+dvfmau $lm0v $ls6 -$lr12 $nowrite
+dvfmad $lm0v $ls6 $mauf $nowrite
+dftoi $mauf $ln0v
