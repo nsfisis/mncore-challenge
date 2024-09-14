@@ -2,10 +2,10 @@ lpackbit $mabid $ln0 $t  # t = 2 x mab
 nop
 dvmulu $lmt0v32 $lmt0v32 $nowrite
 dvfmad $lmt0v32 $lmt0v32 $mauf $nowrite
-dvmulu $lmt128v32 $lmt128v32 $nowrite; l1bmrdfadd $mauf $lbi
+dvfmau $lmt128v32 $lmt128v32 $mauf $nowrite
 dvfmad $lmt128v32 $lmt128v32 $mauf $nowrite
-l1bmm $lbi $lm256v; l1bmrdfadd $mauf $lbi
-l1bmm $lbi $lm264v
+l1bmrdfadd $mauf $lbi
+l1bmm $lbi $lm256v
 nop
 nop
 l1bmrdfadd $lmt256v $lbi

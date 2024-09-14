@@ -1,0 +1,11 @@
+lpackbit $mabid $ln0 $t
+imm i"1" $s3v2
+dvmulu $lmt0v32 $lmt0v32 $nowrite          ; iinc $aluf $s5v2
+dvfmad $lmt0v32 $lmt0v32 $mauf $nowrite    ; iinc $aluf $s7v2
+dvfmau $lmt128v32 $lmt128v32 $mauf $nowrite
+dvfmad $lmt128v32 $lmt128v32 $mauf $nowrite; lxor $mabid $ls0v $omr1
+l1bmrdfadd $mauf $lbi
+l1bmm $lbi $lr0/$imr1
+nop
+l1bmrdfadd $lr[256,256,256,0] $lbi
+l1bmm $lbi $ln0
