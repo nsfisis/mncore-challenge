@@ -1,15 +1,11 @@
-# (96 / 8).times { |i| puts "hvaddr $llm#{8*i}v $llm#{8*i}ve $ln#{8*i}v" }
-hvaddr $lm0v $lm0ve $ln0v
-hvaddr $lm8v $lm8ve $ln8v
-hvaddr $lm16v $lm16ve $ln16v
-hvaddr $lm24v $lm24ve $ln24v
-hvaddr $lm32v $lm32ve $ln32v
-hvaddr $lm40v $lm40ve $ln40v
-hvaddr $lm48v $lm48ve $ln48v
-hvaddr $lm56v $lm56ve $ln56v
-hvaddr $lm64v $lm64ve $ln64v
-hvaddr $lm72v $lm72ve $ln72v
+lpassa $llm0v $llr0v
+lpassa $llm16v $llr16v
+hvaddr $lm32v $lm32ve $ln32v; hilrelud $msb1 $lr0v $lr0v
+hvaddr $lm40v $lm40ve $ln40v; hilrelud $msb1 $lr8v $lr8v
+hvaddr $lm48v $lm48ve $ln48v; hilrelud $msb1 $lr16v $lr16v
+hvaddr $lm56v $lm56ve $ln56v; hilrelud $msb1 $lr24v $lr24v
+hvaddr $lm64v $lm64ve $ls64v; lpassa $llr0v $lln0v
+hvaddr $lm72v $lm72ve $ls72v; lpassa $llr16v $lln16v
 hvaddr $lm80v $lm80ve $ln80v
 hvaddr $lm88v $lm88ve $ln88v
-
-# ある程度コストをかけて ALU 処理する？
+lpassa $lls64v $lln64v
