@@ -1,0 +1,22 @@
+imm f"inf" $t
+
+# (88 / 16 + 1).times { |i| puts "lpassa $llm#{16*i}v $lln#{16*i}v $llr#{16*i}v" }
+lpassa $llm0v $lln0v $llr0v
+lpassa $llm16v $lln16v $llr16v
+lpassa $llm32v $lln32v $llr32v
+lpassa $llm48v $lln48v $llr48v
+lpassa $llm64v $lln64v $llr64v
+lpassa $llm80v $lln80v $llr80v; fvfma -$lr0v $t -$t $omr1
+
+# (88 / 8).times { |i| puts "fvfma -$lr#{8*i}v $t -$t $omr1"; puts "isub $ls0 $lm#{8*i}v $ln#{8*i}v/$imr1" }
+isub $ls0 $lm0v $ln0v/$imr1; fvfma -$lr8v $t -$t $omr1
+isub $ls0 $lm8v $ln8v/$imr1; fvfma -$lr16v $t -$t $omr1
+isub $ls0 $lm16v $ln16v/$imr1; fvfma -$lr24v $t -$t $omr1
+isub $ls0 $lm24v $ln24v/$imr1; fvfma -$lr32v $t -$t $omr1
+isub $ls0 $lm32v $ln32v/$imr1; fvfma -$lr40v $t -$t $omr1
+isub $ls0 $lm40v $ln40v/$imr1; fvfma -$lr48v $t -$t $omr1
+isub $ls0 $lm48v $ln48v/$imr1; fvfma -$lr56v $t -$t $omr1
+isub $ls0 $lm56v $ln56v/$imr1; fvfma -$lr64v $t -$t $omr1
+isub $ls0 $lm64v $ln64v/$imr1; fvfma -$lr72v $t -$t $omr1
+isub $ls0 $lm72v $ln72v/$imr1; fvfma -$lr80v $t -$t $omr1
+isub $ls0 $lm80v $ln80v/$imr1
