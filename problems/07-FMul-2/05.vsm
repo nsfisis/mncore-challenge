@@ -1,0 +1,10 @@
+lpassa $llm0v  $llr0v;  hvaddr $llm0v  $llm0ve  $ln0v4
+lpassa $llm16v $llr16v; hvaddr $llm16v $llm16ve $ln16v4
+lpassa $llm32v $llr32v; hvaddr $llm32v $llm32ve $ln32v4
+hvaddr $lm48v $lm48ve $ls48v; hilrelud $msb1 $lr2v4  $ln2v4
+hvaddr $lm56v $lm56ve $ls56v; hilrelud $msb1 $lr18v4 $ln18v4
+hvaddr $lm64v $lm64ve $ls64v; hilrelud $msb1 $lr34v4 $ln34v4
+hvaddr $lm72v $lm72ve $ls72v; lpassa $lls48v $lln48v
+hvaddr $lm80v $lm80ve $ln80v
+hvaddr $lm88v $lm88ve $ln88v
+lpassa $lls64v $lln64v
