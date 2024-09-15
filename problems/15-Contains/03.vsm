@@ -1,0 +1,255 @@
+# puts "lpackbit $mabid $ls0 $t"
+# puts
+# (32 / 16).times { |i| puts "lpassa $llm#{16*i}v $llr#{16*i}v" }
+# puts
+# 16.times do |i|
+#   puts "lxor  $lr#{2*i} $ln0v $lr32v"
+#   puts "lxor  $lr#{2*i} $ln8v $nowrite"
+#   puts "ulmin $aluf $lr32v $lr40v"
+#   puts "lxor  $lr#{2*i} $ln16v $lr48v"
+#   puts "lxor  $lr#{2*i} $ln24v $nowrite"
+#   puts "ulmin $aluf $lr48v $nowrite"
+#   puts "ulmin $aluf $lr40v $nowrite"
+#   puts "l1bmrland $aluf $lb0"
+#   puts "nop"
+#   puts "nop"
+#   puts "l1bmp $llb0 $llm#{32*i + 32}v"
+#   puts "l1bmp $llb8 $llm#{32*i + 48}v"
+#   puts
+# end
+# (32 / 8).times { |i| puts "l1bmrland $lmt#{32*4*i + 32}v32 $lbi"; puts "l1bmm $lbi $ls#{8*i + 32}v" }
+# puts
+# puts "nop"
+# puts "nop"
+# puts
+# (32 / 8).times { |i| puts "llnot $ls#{8*i + 32}v $ln#{8*i + 32}v" }
+
+lpackbit $mabid $ls0 $t
+
+lpassa $llm0v $llr0v
+lpassa $llm16v $llr16v
+
+lxor  $lr0 $ln0v $lr32v
+lxor  $lr0 $ln8v $nowrite
+ulmin $aluf $lr32v $lr40v
+lxor  $lr0 $ln16v $lr48v
+lxor  $lr0 $ln24v $nowrite
+ulmin $aluf $lr48v $nowrite
+ulmin $aluf $lr40v $nowrite
+l1bmrland $aluf $lb0
+nop
+nop
+l1bmp $llb0 $llm32v
+l1bmp $llb8 $llm48v
+
+lxor  $lr2 $ln0v $lr32v
+lxor  $lr2 $ln8v $nowrite
+ulmin $aluf $lr32v $lr40v
+lxor  $lr2 $ln16v $lr48v
+lxor  $lr2 $ln24v $nowrite
+ulmin $aluf $lr48v $nowrite
+ulmin $aluf $lr40v $nowrite
+l1bmrland $aluf $lb0
+nop
+nop
+l1bmp $llb0 $llm64v
+l1bmp $llb8 $llm80v
+
+lxor  $lr4 $ln0v $lr32v
+lxor  $lr4 $ln8v $nowrite
+ulmin $aluf $lr32v $lr40v
+lxor  $lr4 $ln16v $lr48v
+lxor  $lr4 $ln24v $nowrite
+ulmin $aluf $lr48v $nowrite
+ulmin $aluf $lr40v $nowrite
+l1bmrland $aluf $lb0
+nop
+nop
+l1bmp $llb0 $llm96v
+l1bmp $llb8 $llm112v
+
+lxor  $lr6 $ln0v $lr32v
+lxor  $lr6 $ln8v $nowrite
+ulmin $aluf $lr32v $lr40v
+lxor  $lr6 $ln16v $lr48v
+lxor  $lr6 $ln24v $nowrite
+ulmin $aluf $lr48v $nowrite
+ulmin $aluf $lr40v $nowrite
+l1bmrland $aluf $lb0
+nop
+nop
+l1bmp $llb0 $llm128v
+l1bmp $llb8 $llm144v
+
+lxor  $lr8 $ln0v $lr32v
+lxor  $lr8 $ln8v $nowrite
+ulmin $aluf $lr32v $lr40v
+lxor  $lr8 $ln16v $lr48v
+lxor  $lr8 $ln24v $nowrite
+ulmin $aluf $lr48v $nowrite
+ulmin $aluf $lr40v $nowrite
+l1bmrland $aluf $lb0
+nop
+nop
+l1bmp $llb0 $llm160v
+l1bmp $llb8 $llm176v
+
+lxor  $lr10 $ln0v $lr32v
+lxor  $lr10 $ln8v $nowrite
+ulmin $aluf $lr32v $lr40v
+lxor  $lr10 $ln16v $lr48v
+lxor  $lr10 $ln24v $nowrite
+ulmin $aluf $lr48v $nowrite
+ulmin $aluf $lr40v $nowrite
+l1bmrland $aluf $lb0
+nop
+nop
+l1bmp $llb0 $llm192v
+l1bmp $llb8 $llm208v
+
+lxor  $lr12 $ln0v $lr32v
+lxor  $lr12 $ln8v $nowrite
+ulmin $aluf $lr32v $lr40v
+lxor  $lr12 $ln16v $lr48v
+lxor  $lr12 $ln24v $nowrite
+ulmin $aluf $lr48v $nowrite
+ulmin $aluf $lr40v $nowrite
+l1bmrland $aluf $lb0
+nop
+nop
+l1bmp $llb0 $llm224v
+l1bmp $llb8 $llm240v
+
+lxor  $lr14 $ln0v $lr32v
+lxor  $lr14 $ln8v $nowrite
+ulmin $aluf $lr32v $lr40v
+lxor  $lr14 $ln16v $lr48v
+lxor  $lr14 $ln24v $nowrite
+ulmin $aluf $lr48v $nowrite
+ulmin $aluf $lr40v $nowrite
+l1bmrland $aluf $lb0
+nop
+nop
+l1bmp $llb0 $llm256v
+l1bmp $llb8 $llm272v
+
+lxor  $lr16 $ln0v $lr32v
+lxor  $lr16 $ln8v $nowrite
+ulmin $aluf $lr32v $lr40v
+lxor  $lr16 $ln16v $lr48v
+lxor  $lr16 $ln24v $nowrite
+ulmin $aluf $lr48v $nowrite
+ulmin $aluf $lr40v $nowrite
+l1bmrland $aluf $lb0
+nop
+nop
+l1bmp $llb0 $llm288v
+l1bmp $llb8 $llm304v
+
+lxor  $lr18 $ln0v $lr32v
+lxor  $lr18 $ln8v $nowrite
+ulmin $aluf $lr32v $lr40v
+lxor  $lr18 $ln16v $lr48v
+lxor  $lr18 $ln24v $nowrite
+ulmin $aluf $lr48v $nowrite
+ulmin $aluf $lr40v $nowrite
+l1bmrland $aluf $lb0
+nop
+nop
+l1bmp $llb0 $llm320v
+l1bmp $llb8 $llm336v
+
+lxor  $lr20 $ln0v $lr32v
+lxor  $lr20 $ln8v $nowrite
+ulmin $aluf $lr32v $lr40v
+lxor  $lr20 $ln16v $lr48v
+lxor  $lr20 $ln24v $nowrite
+ulmin $aluf $lr48v $nowrite
+ulmin $aluf $lr40v $nowrite
+l1bmrland $aluf $lb0
+nop
+nop
+l1bmp $llb0 $llm352v
+l1bmp $llb8 $llm368v
+
+lxor  $lr22 $ln0v $lr32v
+lxor  $lr22 $ln8v $nowrite
+ulmin $aluf $lr32v $lr40v
+lxor  $lr22 $ln16v $lr48v
+lxor  $lr22 $ln24v $nowrite
+ulmin $aluf $lr48v $nowrite
+ulmin $aluf $lr40v $nowrite
+l1bmrland $aluf $lb0
+nop
+nop
+l1bmp $llb0 $llm384v
+l1bmp $llb8 $llm400v
+
+lxor  $lr24 $ln0v $lr32v
+lxor  $lr24 $ln8v $nowrite
+ulmin $aluf $lr32v $lr40v
+lxor  $lr24 $ln16v $lr48v
+lxor  $lr24 $ln24v $nowrite
+ulmin $aluf $lr48v $nowrite
+ulmin $aluf $lr40v $nowrite
+l1bmrland $aluf $lb0
+nop
+nop
+l1bmp $llb0 $llm416v
+l1bmp $llb8 $llm432v
+
+lxor  $lr26 $ln0v $lr32v
+lxor  $lr26 $ln8v $nowrite
+ulmin $aluf $lr32v $lr40v
+lxor  $lr26 $ln16v $lr48v
+lxor  $lr26 $ln24v $nowrite
+ulmin $aluf $lr48v $nowrite
+ulmin $aluf $lr40v $nowrite
+l1bmrland $aluf $lb0
+nop
+nop
+l1bmp $llb0 $llm448v
+l1bmp $llb8 $llm464v
+
+lxor  $lr28 $ln0v $lr32v
+lxor  $lr28 $ln8v $nowrite
+ulmin $aluf $lr32v $lr40v
+lxor  $lr28 $ln16v $lr48v
+lxor  $lr28 $ln24v $nowrite
+ulmin $aluf $lr48v $nowrite
+ulmin $aluf $lr40v $nowrite
+l1bmrland $aluf $lb0
+nop
+nop
+l1bmp $llb0 $llm480v
+l1bmp $llb8 $llm496v
+
+lxor  $lr30 $ln0v $lr32v
+lxor  $lr30 $ln8v $nowrite
+ulmin $aluf $lr32v $lr40v
+lxor  $lr30 $ln16v $lr48v
+lxor  $lr30 $ln24v $nowrite
+ulmin $aluf $lr48v $nowrite
+ulmin $aluf $lr40v $nowrite
+l1bmrland $aluf $lb0
+nop
+nop
+l1bmp $llb0 $llm512v
+l1bmp $llb8 $llm528v
+
+nop
+nop
+
+l1bmrland $lmt32v32 $lbi
+l1bmm $lbi $ls32v
+l1bmrland $lmt160v32 $lbi
+l1bmm $lbi $ls40v
+l1bmrland $lmt288v32 $lbi
+l1bmm $lbi $ls48v
+l1bmrland $lmt416v32 $lbi
+l1bmm $lbi $ls56v
+
+llnot $ls32v $ln32v
+llnot $ls40v $ln40v
+llnot $ls48v $ln48v
+llnot $ls56v $ln56v
