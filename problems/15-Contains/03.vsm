@@ -3,18 +3,14 @@
 # (32 / 16).times { |i| puts "lpassa $llm#{16*i}v $llr#{16*i}v" }
 # puts
 # 16.times do |i|
-#   puts "lxor  $lr#{2*i} $ln0v $lr32v"
-#   puts "lxor  $lr#{2*i} $ln8v $nowrite"
-#   puts "ulmin $aluf $lr32v $lr40v"
-#   puts "lxor  $lr#{2*i} $ln16v $lr48v"
-#   puts "lxor  $lr#{2*i} $ln24v $nowrite"
-#   puts "ulmin $aluf $lr48v $nowrite"
-#   puts "ulmin $aluf $lr40v $nowrite"
-#   puts "l1bmrland $aluf $lb0"
-#   puts "nop"
-#   puts "nop"
-#   puts "l1bmp $llb0 $llm#{32*i + 32}v"
-#   puts "l1bmp $llb8 $llm#{32*i + 48}v"
+#   puts "lxor $lr#{2*i} $ln0v $omr1"
+#   puts "linc $ls256 $ls#{2*i}/$imr1"
+#   puts "lxor $lr#{2*i} $ln8v $omr1"
+#   puts "linc $ls256 $ls#{2*i}/$imr1"
+#   puts "lxor $lr#{2*i} $ln16v $omr1"
+#   puts "linc $ls256 $ls#{2*i}/$imr1"
+#   puts "lxor $lr#{2*i} $ln24v $omr1"
+#   puts "linc $ls256 $ls#{2*i}/$imr1"
 #   puts
 # end
 # (32 / 8).times { |i| puts "l1bmrland $lmt#{32*4*i + 32}v32 $lbi"; puts "l1bmm $lbi $ls#{8*i + 32}v" }
