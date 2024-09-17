@@ -1,0 +1,56 @@
+imm i"3" $s3/1000
+imm i"7" $s5/1000
+imm i"4" $s7/1000
+imm i"2" $s9/1000
+llsr $peid $ls2 $lr0/1000 # i
+land $peid $ls4 $lr2/1000 # j
+llsr $aluf $ls8 $lr4/1000 # j1
+land $lr2 $ls2 $lr6/1000  # j2
+lpackbit $aluf $ln0 $nowrite
+ladd $aluf $lr4 $nowrite
+llsl $aluf $ls2 $nowrite
+ladd $aluf $lr0 $nowrite
+lpackbit $aluf $ln0 $t
+nop
+l1bmd $lmt0 $lb0
+nop
+nop
+l1bmp $llb0 $lln0v
+l1bmp $llb8 $lln16v
+l1bmp $llb16 $lln32v
+l1bmp $llb24 $lln48v
+l1bmp $llb32 $lln64v
+l1bmp $llb40 $lln80v
+l1bmp $llb48 $lln96v
+l1bmp $llb56 $lln112v
+
+16.times do |mabid|
+  4.times do |subpeid|
+    peid = mabid*4 + subpeid
+    i = peid >> 3               # $lr[0]
+    j = peid & 0b111            # $lr[2]
+    j1 = j >> 2                 # $lr[4]
+    j2 = j & 0b11               # $lr[6]
+    lm = (((j1 + (j2 << 1)) << 3) + i) << 1
+    puts "MAB #{mabid} PE #{subpeid} (#{peid}): $lm[#{lm}]"
+  end
+end
+
+
+dvpassa         ; t             ; x1
+dvpassa         ; nop           ; x1
+dvpassa         ; l1bmd         ; x1
+dvpassa         ; nop           ; x1
+                ; nop           ; x2 !!!
+l1bmp ... ...                   ; x2
+l1bmp ... ...                   ; x2
+l1bmp ... ...                   ; x2
+l1bmp ... ...                   ; x2
+l1bmp ... ...                   ; x2
+
+
+
+lpassa $llm0v $llr0v   ; dvpassa $llm0v $ln[TODO]
+lpassa $llm16v $llr16v ; dvpassa $llm16v $ln[TODO]
+dvpassa $lm[TODO] $ln[TODO]
+dvpassa $lm[TODO] $ln[TODO]
