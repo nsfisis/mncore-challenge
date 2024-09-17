@@ -1,28 +1,23 @@
 # 得点効率表
 
-```
-m = min{上位5名の点}
-M = 自分の点
-```
-
-| 問題            | m   | M   | m-M |
-|-----------------|-----|-----|-----|
-| Mul 7           |  88 |  70 |  18 |
-| Abs             | 100 |  80 |  20 |
-| FAM 8           |  85 |  85 |   0 |
-| FMul 2          | 100 | 100 |   0 |
-| Lesseq          | 100 | 100 |   0 |
-| Transpose       |  85 |  67 |  18 |
-| Gather          | 100 | 100 |   0 |
-| Square Sum      | 100 | 100 |   0 |
-| Convert Endian  | 100 | 100 |   0 |
-| Mod 3           |  85 |  48 |  37 |
-| Matrix Square   | 100 |  92 |   8 |
-| Contains        |  82 |  17 |  65 |
-| Count Up        |  81 |  33 |  48 |
-| Transpose MAB   |  57 |  49 |   8 |
-| Inversion Small |  67 |  27 |  40 |
-| Inversion       |  81 |  19 |  62 |
+| 問題            | 自得点 | 差 |
+|-----------------|--------|----|
+| Mul 7           |     70 | 30 |
+| Abs             |     80 | 20 |
+| FAM 8           |     85 | 15 |
+| FMul 2          |    100 |  0 |
+| Lesseq          |    100 |  0 |
+| Transpose       |     67 | 33 |
+| Gather          |    100 |  0 |
+| Square Sum      |    100 |  0 |
+| Convert Endian  |    100 |  0 |
+| Mod 3           |     48 | 52 |
+| Matrix Square   |    100 |  0 |
+| Contains        |     19 | 81 |
+| Count Up        |     33 | 67 |
+| Transpose MAB   |     47 | 53 |
+| Inversion Small |     27 | 73 |
+| Inversion       |     19 | 81 |
 
 # 短縮テクニックメモ
 
@@ -39,3 +34,4 @@ M = 自分の点
 * 2倍は `packbit`
 * 入力と出力のスループットは絶対
 * MAB/PE 等の出し分けに `$t` を使わずマスクを使う
+* 2長語のフォワーディングの MSB 側だけを使う
