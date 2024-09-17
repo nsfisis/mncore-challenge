@@ -14,7 +14,7 @@
 | Mod 3           |     48 | 52 |
 | Matrix Square   |    100 |  0 |
 | Contains        |     19 | 81 |
-| Count Up        |     33 | 67 |
+| Count Up        |     36 | 64 |
 | Transpose MAB   |     47 | 53 |
 | Inversion Small |     27 | 73 |
 | Inversion       |     19 | 81 |

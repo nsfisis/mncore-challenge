@@ -1,0 +1,99 @@
+imm i"4" $s0/1000
+imm i"0b111" $s1/1000
+imm i"0b1110" $s2/1000
+imm i"6" $s3/1000
+
+ilsl $l1bid $s0 $nowrite
+iadd $aluf $s128v $s128v
+iand $peid $s1 $nowrite
+ipackbit $aluf $n0 $nowrite
+iadd $aluf $s128v $s128v
+iand $mabid $s2 $nowrite
+ilsl $aluf $s3 $nowrite
+iadd $aluf $s128v $s128v
+ipassa $aluf $s132v
+
+imm i"4096" $ls256v
+
+imm i"1" $r0/1000
+imm i"2" $r1/1000
+imm i"1025" $r2/1000
+imm i"1026" $r3/1000
+imm i"2049" $r4/1000
+imm i"2050" $r5/1000
+imm i"3073" $r6/1000
+imm i"3074" $r7/1000
+
+iadd $lr0v $ls128v $lr0v
+iadd $aluf $ls256v $lr8v
+iadd $aluf $ls256v $lr16v; l1bmd $lr0v $lb0
+iadd $aluf $ls256v $lr24v; l1bmd $lr8v $lb256
+iadd $aluf $ls256v $lr32v; l1bmd $lr16v $lb512
+iadd $aluf $ls256v $lr40v; l1bmd $lr24v $lb768; l2bmd $lb0 $lc0
+iadd $aluf $ls256v $lr48v; l1bmd $lr32v $lb1024; l2bmd $lb32 $lc256
+iadd $aluf $ls256v $lr56v; l1bmd $lr40v $lb1280; l2bmd $lb64 $lc512
+                           l1bmd $lr48v $lb1536; l2bmd $lb96 $lc768
+                           l1bmd $lr56v $lb1792; l2bmd $lb128 $lc1024
+l2bmd $lb160 $lc1280
+l2bmd $lb192 $lc1536
+l2bmd $lb224 $lc1792
+l2bmd $lb256 $lc2048
+l2bmd $lb288 $lc2304
+l2bmd $lb320 $lc2560
+l2bmd $lb352 $lc2816
+l2bmd $lb384 $lc3072
+l2bmd $lb416 $lc3328
+l2bmd $lb448 $lc3584
+l2bmd $lb480 $lc3840
+l2bmd $lb512 $lc4096
+l2bmd $lb544 $lc4352
+l2bmd $lb576 $lc4608
+l2bmd $lb608 $lc4864
+l2bmd $lb640 $lc5120
+l2bmd $lb672 $lc5376
+l2bmd $lb704 $lc5632
+l2bmd $lb736 $lc5888
+l2bmd $lb768 $lc6144
+l2bmd $lb800 $lc6400
+l2bmd $lb832 $lc6656
+l2bmd $lb864 $lc6912
+l2bmd $lb896 $lc7168
+l2bmd $lb928 $lc7424
+l2bmd $lb960 $lc7680
+l2bmd $lb992 $lc7936
+l2bmd $lb1024 $lc8192
+l2bmd $lb1056 $lc8448
+l2bmd $lb1088 $lc8704
+l2bmd $lb1120 $lc8960
+l2bmd $lb1152 $lc9216
+l2bmd $lb1184 $lc9472
+l2bmd $lb1216 $lc9728
+l2bmd $lb1248 $lc9984
+l2bmd $lb1280 $lc10240
+l2bmd $lb1312 $lc10496
+l2bmd $lb1344 $lc10752
+l2bmd $lb1376 $lc11008
+l2bmd $lb1408 $lc11264
+l2bmd $lb1440 $lc11520
+l2bmd $lb1472 $lc11776
+l2bmd $lb1504 $lc12032
+l2bmd $lb1536 $lc12288
+l2bmd $lb1568 $lc12544
+l2bmd $lb1600 $lc12800
+l2bmd $lb1632 $lc13056
+l2bmd $lb1664 $lc13312
+l2bmd $lb1696 $lc13568
+l2bmd $lb1728 $lc13824
+l2bmd $lb1760 $lc14080
+l2bmd $lb1792 $lc14336
+l2bmd $lb1824 $lc14592
+l2bmd $lb1856 $lc14848
+l2bmd $lb1888 $lc15104
+l2bmd $lb1920 $lc15360
+l2bmd $lb1952 $lc15616
+l2bmd $lb1984 $lc15872
+l2bmd $lb2016 $lc16128
+
+nop
+
+mvp/n16384 $lc0@.0 $d0
