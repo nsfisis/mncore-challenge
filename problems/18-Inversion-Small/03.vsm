@@ -1,0 +1,32 @@
+imm i"1" $s3/1000
+imm i"2" $s5/1000
+imm i"3" $s7/1000
+imm i"4" $s9/1000
+iadd $aluf $s3v2 $s11v2
+iadd $aluf $s9 $s19v2
+iadd $aluf $s9 $s27v2/1110
+
+lpackbit $mabid $ln0 $t
+lpassa $llm0v $llr0v
+lpassa $llm16v $llr16v
+linc $lmt0 $t
+
+lsub $mabid $ls0v $omr1
+lsub $lr0v $t $omr1/$imr1
+lpassa/$imr1 $ls2 $nowrite
+lsub $mabid $ls8v $omr1;    l1bmrliadd $aluf $lbi
+lsub $lr8v $t $omr1/$imr1;  l1bmm $lbi $lm0v
+lpassa/$imr1 $ls2 $nowrite
+lsub $mabid $ls16v $omr1;   l1bmrliadd $aluf $lbi
+lsub $lr16v $t $omr1/$imr1; l1bmm $lbi $lm8v
+lpassa/$imr1 $ls2 $nowrite
+lsub $mabid $ls24v $omr1;   l1bmrliadd $aluf $lbi
+lsub $lr24v $t $omr1/$imr1; l1bmm $lbi $lm16v
+lpassa/$imr1 $ls2 $nowrite
+l1bmrliadd $aluf $lbi
+l1bmm $lbi $lm24v
+
+lpackbit $mabid $ln0 $t
+nop
+l1bmrliadd $lmt0 $lbi
+l1bmm $lbi $ln0

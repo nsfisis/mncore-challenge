@@ -1,7 +1,7 @@
 # $ls[0:32] = k
-# $ls[32:64] = j < k
-# $lr[0:32] = A[j] > A[k]
-# $lr[0:32] = (j < k) and (A[j] > A[k])
+# $ls[32:64] = j >= k
+# $lr[0:32] = A[j] < A[k]
+# $lr[0:32] = (j >= k) and (A[j] < A[k])
 imm i"1" $s3/1000
 imm i"2" $s5/1000
 imm i"3" $s7/1000
@@ -39,7 +39,7 @@ llnot $lr8v $lr8v
 llnot $lr16v $lr16v
 llnot $lr24v $lr24v
 
-# d getd $ls0n0c0b0p0 16
+# d getd $ls32n0c0b0p0 16
 # d getd $lr0n0c0b0p0 16
 
 # 4.times { |i| puts "land $ls#{32+i*8}v $lr#{i*8}v $lr#{i*8}v" }
