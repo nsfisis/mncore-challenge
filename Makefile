@@ -19,4 +19,4 @@ contains:
 	./judge --enable-get problems/15-Contains/testcase.vsm problems/15-Contains/03.vsm
 
 inversion:
-	./judge --enable-get problems/19-Inversion/testcase.vsm problems/19-Inversion/02.vsm
+	./judge --enable-get problems/19-Inversion/testcase.vsm problems/19-Inversion/03.vsm
