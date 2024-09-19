@@ -1,4 +1,4 @@
-all: contains
+all: inversion
 
 matrix_square_testcase_1:
 	./judge --enable-get problems/14-Matrix-Square/testcase_1_double_4x4.vsm problems/14-Matrix-Square/answer_1_double_4x4.vsm
@@ -19,4 +19,4 @@ contains:
 	./judge --enable-get problems/15-Contains/testcase.vsm problems/15-Contains/03.vsm
 
 inversion:
-	./judge --enable-get problems/19-Inversion/testcase.vsm problems/19-Inversion/01.vsm
+	./judge --enable-get problems/19-Inversion/testcase.vsm problems/19-Inversion/02.vsm
