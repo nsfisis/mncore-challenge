@@ -17,7 +17,7 @@
 | Count Up        |     69 | 31 |
 | Transpose MAB   |     47 | 53 |
 | Inversion Small |     42 | 58 |
-| Inversion       |     26 | 74 |
+| Inversion       |     35 | 65 |
 
 # 短縮テクニックメモ
 

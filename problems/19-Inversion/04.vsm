@@ -1,0 +1,153 @@
+# j = $l2bid x 8 + $l1bid
+# $n128 = j
+# $n256 = A[j]
+# $s256 = 1
+# $s272 = 0
+# $ls[0:128] = k (from 0 to 63)
+# $ls[128:256] = j >= k
+# $lr[0:128] = A[k]
+# $lr[0:128] = A[j] < A[k]
+# $lr[0:128] = (j >= k) and (A[j] < A[k])
+
+# 64.times { |i| puts "imm i\"#{i}\" $s#{2*i}v/1100 # $s#{2*i} = $s#{2*i+1} = #{i}" }
+# imm i"0" $s0v/1100 # $s0 = $s1 = 0
+imm i"1" $ls2/1000 # $s2 = $s3 = 1
+imm i"2" $ls4/1000 # $s4 = $s5 = 2
+imm i"3" $ls6/1000 # $s6 = $s7 = 3
+imm i"4" $ls8/1000 # $s8 = $s9 = 4
+iadd $aluf $ls2v $ls10v
+iadd $aluf $ls8 $ls18v
+iadd $aluf $ls8 $ls26v
+iadd $aluf $ls8 $ls34v
+iadd $aluf $ls8 $ls42v
+iadd $aluf $ls8 $ls50v
+iadd $aluf $ls8 $ls58v
+iadd $aluf $ls8 $ls66v
+iadd $aluf $ls8 $ls74v
+iadd $aluf $ls8 $ls82v
+iadd $aluf $ls8 $ls90v
+iadd $aluf $ls8 $ls98v
+iadd $aluf $ls8 $ls106v
+iadd $aluf $ls8 $ls114v
+iadd $aluf $ls8 $ls122v/1110
+
+# d getf $ls0n0c0b0m0p0 64
+# quit
+
+ilsl $l2bid $s6 $nowrite
+iadd $l1bid $aluf $n128v
+
+# (128/16).times { |i| puts "lpassa $llm#{i*16}v $llr#{i*16}v" }
+lpassa $llm0v $llr0v
+lpassa $llm16v $llr16v
+lpassa $llm32v $llr32v
+lpassa $llm48v $llr48v
+lpackbit $ln128 $ls272 $t
+lpassa $llm64v $llr64v
+iinc $lmt0 $ln256
+lpassa $llm80v $llr80v
+lpassa $llm96v $llr96v
+lpassa $llm112v $llr112v
+
+# (128/8).times { |i| puts "isub $ln128 $ls#{i*8}v $omr1"; puts "isub $lr#{i*8}v $ln256 $omr1/$imr1"; puts "ipassa/$imr1 $ls2 $lr#{i*8}v" }
+isub $ln128 $ls0v $omr1
+isub $lr0v $ln256 $omr1/$imr1
+ipassa/$imr1 $ls2 $lr0v
+isub $ln128 $ls8v $omr1
+isub $lr8v $ln256 $omr1/$imr1
+ipassa/$imr1 $ls2 $lr8v
+isub $ln128 $ls16v $omr1
+isub $lr16v $ln256 $omr1/$imr1
+ipassa/$imr1 $ls2 $lr16v
+isub $ln128 $ls24v $omr1
+isub $lr24v $ln256 $omr1/$imr1
+ipassa/$imr1 $ls2 $lr24v
+isub $ln128 $ls32v $omr1
+isub $lr32v $ln256 $omr1/$imr1
+ipassa/$imr1 $ls2 $lr32v
+isub $ln128 $ls40v $omr1
+isub $lr40v $ln256 $omr1/$imr1
+ipassa/$imr1 $ls2 $lr40v
+isub $ln128 $ls48v $omr1
+isub $lr48v $ln256 $omr1/$imr1
+ipassa/$imr1 $ls2 $lr48v
+isub $ln128 $ls56v $omr1
+isub $lr56v $ln256 $omr1/$imr1
+ipassa/$imr1 $ls2 $lr56v
+isub $ln128 $ls64v $omr1
+isub $lr64v $ln256 $omr1/$imr1
+ipassa/$imr1 $ls2 $lr64v
+isub $ln128 $ls72v $omr1
+isub $lr72v $ln256 $omr1/$imr1
+ipassa/$imr1 $ls2 $lr72v
+isub $ln128 $ls80v $omr1
+isub $lr80v $ln256 $omr1/$imr1
+ipassa/$imr1 $ls2 $lr80v
+isub $ln128 $ls88v $omr1
+isub $lr88v $ln256 $omr1/$imr1
+ipassa/$imr1 $ls2 $lr88v
+isub $ln128 $ls96v $omr1
+isub $lr96v $ln256 $omr1/$imr1
+ipassa/$imr1 $ls2 $lr96v
+isub $ln128 $ls104v $omr1
+isub $lr104v $ln256 $omr1/$imr1
+ipassa/$imr1 $ls2 $lr104v
+isub $ln128 $ls112v $omr1
+isub $lr112v $ln256 $omr1/$imr1
+ipassa/$imr1 $ls2 $lr112v
+isub $ln128 $ls120v $omr1
+isub $lr120v $ln256 $omr1/$imr1
+ipassa/$imr1 $ls2 $lr120v
+
+ipassa $lr0v $nowrite
+# (128/8 - 1).times { |i| puts "iadd $aluf $lr#{(i+1)*8}v $nowrite" }
+iadd $aluf $lr8v $nowrite
+iadd $aluf $lr16v $nowrite
+iadd $aluf $lr24v $nowrite
+iadd $aluf $lr32v $nowrite
+iadd $aluf $lr40v $nowrite
+iadd $aluf $lr48v $nowrite
+iadd $aluf $lr56v $nowrite
+iadd $aluf $lr64v $nowrite
+iadd $aluf $lr72v $nowrite
+iadd $aluf $lr80v $nowrite
+iadd $aluf $lr88v $nowrite
+iadd $aluf $lr96v $nowrite
+iadd $aluf $lr104v $nowrite
+iadd $aluf $lr112v $nowrite
+iadd $aluf $lr120v $nowrite
+
+l1bmd $aluf $lb0
+
+nop
+nop
+
+# (256/64).times { |i| puts "l2bmriiadd $lb#{i*64} $lc#{i*64}" }
+l2bmriiadd $lb0 $lc0
+l2bmriiadd $lb64 $lc64
+l2bmriiadd $lb128 $lc128
+l2bmriiadd $lb192 $lc192
+
+nop
+
+mvriiadd/n256 $lc0 $p0@0
+mvb/n256 $p0@0 $lc0
+
+nop
+nop
+
+# (256/64).times { |i| puts "l2bmb $lc#{i*64} $lb#{i*64}" }
+l2bmb $lc0 $lb0
+l2bmb $lc64 $lb64
+l2bmb $lc128 $lb128
+l2bmb $lc192 $lb192
+
+nop
+nop
+
+l1bmd $lb0 $lr0v
+nop
+nop
+iadd $lbf $lr4v $lr12v
+nop
+iadd $aluf $lr14 $ln0v
