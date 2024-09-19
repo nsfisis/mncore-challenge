@@ -14,9 +14,9 @@
 | Mod 3           |     48 | 52 |
 | Matrix Square   |    100 |  0 |
 | Contains        |     19 | 81 |
-| Count Up        |     36 | 64 |
+| Count Up        |     69 | 31 |
 | Transpose MAB   |     47 | 53 |
-| Inversion Small |     27 | 73 |
+| Inversion Small |     31 | 69 |
 | Inversion       |     19 | 81 |
 
 # 短縮テクニックメモ

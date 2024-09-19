@@ -1,51 +1,65 @@
+# $ls[0:32] = k
+# $ls[32:64] = j < k
+# $lr[0:32] = A[j] > A[k]
+# $lr[0:32] = (j < k) and (A[j] > A[k])
 imm i"1" $s3/1000
 imm i"2" $s5/1000
 imm i"3" $s7/1000
 imm i"4" $s9/1000
-imm i"5" $s11/1000
-imm i"6" $s13/1000
-imm i"7" $s15/1000
-imm i"8" $s17/1000
-imm i"9" $s19/1000
-imm i"10" $s21/1000
-imm i"11" $s23/1000
-imm i"12" $s25/1000
-imm i"13" $s27/1000
-imm i"14" $s29/1000
-imm i"15" $s31/1000
+iadd $aluf $s3v2 $s11v2
+iadd $aluf $s9 $s19v2
+iadd $aluf $s9 $s27v2/1110
+
+# 4.times { |i| puts "lsub $mabid $ls#{i*8}v $omr1"; puts "lpassa/$imr1 $ls2 $ls#{32+i*8}v" }
+lsub $mabid $ls0v $omr1
+lpassa/$imr1 $ls2 $ls32v
+lsub $mabid $ls8v $omr1
+lpassa/$imr1 $ls2 $ls40v
+lsub $mabid $ls16v $omr1
+lpassa/$imr1 $ls2 $ls48v
+lsub $mabid $ls24v $omr1
+lpassa/$imr1 $ls2 $ls56v
 
 lpackbit $mabid $ln0 $t
-lpassa $mabid $lr32
 lpassa $llm0v $llr0v
 lpassa $llm16v $llr16v
 
-lsub $mabid $ls0v $omr1
-lsub $lmt0 $lr0v $nowrite
-llnot $lr0v $lr0v $omr1/$imr1
+# 4.times { |i| puts "lsub $lmt0 $lr#{i*8}v $omr1"; puts "lpassa/$imr1 $ls2 $lr#{i*8}v" }
+# 4.times { |i| puts "llnot $lr#{i*8}v $lr#{i*8}v" }
+lsub $lmt0 $lr0v $omr1
 lpassa/$imr1 $ls2 $lr0v
-lsub $mabid $ls8v $omr1
-lsub $lmt0 $lr8v $omr1/$imr1
-llnot $lr0v $lr0v $omr1/$imr1
+lsub $lmt0 $lr8v $omr1
 lpassa/$imr1 $ls2 $lr8v
-lsub $mabid $ls16v $omr1
-lsub $lmt0 $lr16v $omr1/$imr1
-llnot $lr0v $lr0v $omr1/$imr1
+lsub $lmt0 $lr16v $omr1
 lpassa/$imr1 $ls2 $lr16v
-lsub $mabid $ls24v $omr1
-lsub $lmt0 $lr24v $omr1/$imr1
-llnot $lr0v $lr0v $omr1/$imr1
+lsub $lmt0 $lr24v $omr1
 lpassa/$imr1 $ls2 $lr24v
+llnot $lr0v $lr0v
+llnot $lr8v $lr8v
+llnot $lr16v $lr16v
+llnot $lr24v $lr24v
 
-l1bmrliadd $lr0v $lb0
-l1bmm $lbi $lm0v
-l1bmrliadd $lr8v $lb0
-l1bmm $lbi $lm8v
-l1bmrliadd $lr16v $lb0
-l1bmm $lbi $lm16v
-l1bmrliadd $lr24v $lb0
+# d getd $ls0n0c0b0p0 16
+# d getd $lr0n0c0b0p0 16
+
+# 4.times { |i| puts "land $ls#{32+i*8}v $lr#{i*8}v $lr#{i*8}v" }
+land $ls32v $lr0v $lr0v
+land $ls40v $lr8v $lr8v
+land $ls48v $lr16v $lr16v
+land $ls56v $lr24v $lr24v
+
+# d getd $lr0n0c0b0p0 16
+
+nop
+
+# 4.times { |i| puts "l1bmrliadd $lr#{i*8}v $lbi"; puts "l1bmm $lbi $lm#{i*8}v" }
+l1bmrliadd $lr0v $lbi
+l1bmrliadd $lr8v $lbi; l1bmm $lbi $lm0v
+l1bmrliadd $lr16v $lbi; l1bmm $lbi $lm8v
+l1bmrliadd $lr24v $lbi; l1bmm $lbi $lm16v
 l1bmm $lbi $lm24v
 
 lpackbit $mabid $ln0 $t
 nop
-l1bmrliadd $lmt0 $lb0
+l1bmrliadd $lmt0 $lbi
 l1bmm $lbi $ln0
