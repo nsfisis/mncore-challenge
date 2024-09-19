@@ -2,15 +2,15 @@ imm i"3" $s3/1000
 imm i"7" $s5/1000
 imm i"4" $s7/1000
 imm i"2" $s9/1000
-llsr $peid $ls2 $lr0/1000 # i
-land $peid $ls4 $lr2/1000 # j
-llsr $aluf $ls8 $lr4/1000 # j1
-land $lr2 $ls2 $lr6/1000  # j2
-lpackbit $aluf $ln0 $nowrite
-ladd $aluf $lr4 $nowrite
-llsl $aluf $ls2 $nowrite
-ladd $aluf $lr0 $nowrite
-lpackbit $aluf $ln0 $t
+llsr $peid $ls2 $lr0/1000       ; dvpassa $lm8v16 $ln64v
+land $peid $ls4 $lr2/1000       ; dvpassa $lm72v16 $ln72v
+llsr $aluf $ls8 $lr4/1000       ; dvpassa $lm10v16 $ln80v
+land $lr2 $ls2 $lr6/1000        ; dvpassa $lm74v16 $ln88v
+lpackbit $aluf $t $nowrite      ; dvpassa $lm12v16 $ln96v
+ladd $aluf $lr4 $nowrite        ; dvpassa $lm76v16 $ln104v
+llsl $aluf $ls2 $nowrite        ; dvpassa $lm14v16 $ln112v
+ladd $aluf $lr0 $nowrite        ; dvpassa $lm78v16 $ln120v
+lpackbit $aluf $t $t
 nop
 l1bmd $lmt0 $lb0
 nop
@@ -19,10 +19,13 @@ l1bmp $llb0 $lln0v
 l1bmp $llb8 $lln16v
 l1bmp $llb16 $lln32v
 l1bmp $llb24 $lln48v
-l1bmp $llb32 $lln64v
-l1bmp $llb40 $lln80v
-l1bmp $llb48 $lln96v
-l1bmp $llb56 $lln112v
+
+[96, 98, 100, 102, 104, 106, 108, 110].each do |i|
+  x = (i / 2) / 8
+  y = (i / 2) % 8
+  j = (y * 8 + x) * 2
+  puts j
+end
 
 16.times do |mabid|
   4.times do |subpeid|
