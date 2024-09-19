@@ -1,0 +1,40 @@
+imm i"1"      $r0v/1100
+imm i"1025"   $r2v/1100
+imm i"2049"   $r4v/1100
+imm i"3073"   $r6v/1100
+imm i"4"      $s0v/1100
+imm i"0b111"  $s2v/1100
+imm i"0b1110" $s4v/1100
+imm i"6"      $s6v/1100
+imm i"12"     $s8v/1100
+iinc $r1v2 $r1v2
+ilsl $l1bid $ls0 $ls128v     # l1bid * 16
+iand $peid $ls2 $nowrite     # (peid % 8) * 2
+ipackbit $aluf $ln0 $nowrite # (peid % 8) * 2
+iadd $aluf $ls128v $ls128v   # (peid % 8) * 2
+iand $mabid $ls4 $nowrite    # (mabid / 2) * 128
+ilsl $aluf $ls6 $nowrite     # (mabid / 2) * 128
+iadd $aluf $ls128v $ls128v   # (mabid / 2) * 128
+ilsl $l2bid $ls8 $nowrite    # l2bid * 4096
+iadd $aluf $ls128v $nowrite  # l2bid * 4096
+iadd $aluf $lr0v $nowrite
+l1bmd $aluf $lb0
+nop
+nop
+l2bmd $lb0   $lc0
+l2bmd $lb32  $lc256
+l2bmd $lb64  $lc512
+l2bmd $lb96  $lc768
+l2bmd $lb128 $lc1024
+l2bmd $lb160 $lc1280
+l2bmd $lb192 $lc1536
+l2bmd $lb224 $lc1792
+nop
+mvp/n2048 $lc0@0.0 $d0@0
+mvp/n2048 $lc0@0.1 $d2048@0
+mvp/n2048 $lc0@1.0 $d4096@0
+mvp/n2048 $lc0@1.1 $d6144@0
+mvp/n2048 $lc0@2.0 $d8192@0
+mvp/n2048 $lc0@2.1 $d10240@0
+mvp/n2048 $lc0@3.0 $d12288@0
+mvp/n2048 $lc0@3.1 $d14336@0
