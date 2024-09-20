@@ -13,7 +13,7 @@
 | Convert Endian  |    100 |  0 |
 | Mod 3           |     48 | 52 |
 | Matrix Square   |    100 |  0 |
-| Contains        |     19 | 81 |
+| Contains        |     25 | 75 |
 | Count Up        |     69 | 31 |
 | Transpose MAB   |     47 | 53 |
 | Inversion Small |     42 | 58 |
