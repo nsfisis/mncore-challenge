@@ -16,7 +16,7 @@ mod3:
 	./judge --enable-get problems/13-Mod-3/testcase.vsm problems/13-Mod-3/08.vsm
 
 contains:
-	./judge --enable-get problems/15-Contains/testcase.vsm problems/15-Contains/04.vsm
+	./judge --enable-get problems/15-Contains/testcase.vsm problems/15-Contains/05.vsm
 
 inversion:
 	./judge --enable-get problems/19-Inversion/testcase.vsm problems/19-Inversion/04.vsm

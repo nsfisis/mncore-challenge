@@ -1,0 +1,124 @@
+ipassa $n1v2  $r0v
+ipassa $n9v2  $r4v
+ipassa $n17v2 $r8v
+ipassa $n25v2 $r12v
+lpassa $lr0v $ln0v
+lpassa $lr8v $ln8v
+
+lpassa $llm0v $llr0v
+lpassa $llm16v $llr16v
+ipassa $m[1,3,5,7]     $r[0,2,4,6]
+ipassa $m[9,11,13,15]  $r[8,10,12,14]
+ipassa $m[17,19,21,23] $r[16,18,20,22]
+ipassa $m[25,27,29,31] $r[24,26,28,30]
+
+ixor $lr0 $ln0v $omr1
+iinc $ls32v $ls32v/$imr1
+ixor $lr0 $ln8v $omr1
+iinc $ls32v $ls32v/$imr1
+
+ixor $lr2 $ln0v $omr1
+iinc $lr40v $lr40v/$imr1;     l1bmrlor $ls32v $lb0
+ixor $lr2 $ln8v $omr1
+iinc $lr40v $lr40v/$imr1
+                              l1bmp $llb0 $llm32v
+
+ixor $lr4 $ln0v $omr1;        l1bmp $llb8 $llm48v
+iinc $ls48v $ls48v/$imr1;     l1bmrlor $lr40v $lb0
+ixor $lr4 $ln8v $omr1
+iinc $ls48v $ls48v/$imr1
+                              l1bmp $llb0 $llm64v
+
+ixor $lr6 $ln0v $omr1;        l1bmp $llb8 $llm80v
+iinc $lr56v $lr56v/$imr1;     l1bmrlor $ls48v $lb0
+ixor $lr6 $ln8v $omr1
+iinc $lr56v $lr56v/$imr1
+                              l1bmp $llb0 $llm96v
+
+ixor $lr8 $ln0v $omr1;        l1bmp $llb8 $llm112v
+iinc $ls64v $ls64v/$imr1;     l1bmrlor $lr56v $lb0
+ixor $lr8 $ln8v $omr1
+iinc $ls64v $ls64v/$imr1
+                              l1bmp $llb0 $llm128v
+
+ixor $lr10 $ln0v $omr1;       l1bmp $llb8 $llm144v
+iinc $lr72v $lr72v/$imr1;     l1bmrlor $ls64v $lb0
+ixor $lr10 $ln8v $omr1
+iinc $lr72v $lr72v/$imr1
+                              l1bmp $llb0 $llm160v
+
+ixor $lr12 $ln0v $omr1;       l1bmp $llb8 $llm176v
+iinc $ls80v $ls80v/$imr1;     l1bmrlor $lr72v $lb0
+ixor $lr12 $ln8v $omr1
+iinc $ls80v $ls80v/$imr1
+                              l1bmp $llb0 $llm192v
+
+ixor $lr14 $ln0v $omr1;       l1bmp $llb8 $llm208v
+iinc $lr88v $lr88v/$imr1;     l1bmrlor $ls80v $lb0
+ixor $lr14 $ln8v $omr1
+iinc $lr88v $lr88v/$imr1
+                              l1bmp $llb0 $llm224v
+
+ixor $lr16 $ln0v $omr1;       l1bmp $llb8 $llm240v
+iinc $ls96v $ls96v/$imr1;     l1bmrlor $lr88v $lb0
+ixor $lr16 $ln8v $omr1
+iinc $ls96v $ls96v/$imr1
+                              l1bmp $llb0 $llm256v
+
+ixor $lr18 $ln0v $omr1;       l1bmp $llb8 $llm272v
+iinc $lr104v $lr104v/$imr1;   l1bmrlor $ls96v $lb0
+ixor $lr18 $ln8v $omr1
+iinc $lr104v $lr104v/$imr1
+                              l1bmp $llb0 $llm288v
+
+ixor $lr20 $ln0v $omr1;       l1bmp $llb8 $llm304v
+iinc $ls112v $ls112v/$imr1;   l1bmrlor $lr104v $lb0
+ixor $lr20 $ln8v $omr1
+iinc $ls112v $ls112v/$imr1
+                              l1bmp $llb0 $llm320v
+
+ixor $lr22 $ln0v $omr1;       l1bmp $llb8 $llm336v
+iinc $lr120v $lr120v/$imr1;   l1bmrlor $ls112v $lb0
+ixor $lr22 $ln8v $omr1
+iinc $lr120v $lr120v/$imr1
+                              l1bmp $llb0 $llm352v
+
+ixor $lr24 $ln0v $omr1;       l1bmp $llb8 $llm368v
+iinc $ls128v $ls128v/$imr1;   l1bmrlor $lr120v $lb0
+ixor $lr24 $ln8v $omr1
+iinc $ls128v $ls128v/$imr1
+                              l1bmp $llb0 $llm384v
+
+ixor $lr26 $ln0v $omr1;       l1bmp $llb8 $llm400v
+iinc $lr136v $lr136v/$imr1;   l1bmrlor $ls128v $lb0
+ixor $lr26 $ln8v $omr1
+iinc $lr136v $lr136v/$imr1
+                              l1bmp $llb0 $llm416v
+
+ixor $lr28 $ln0v $omr1;       l1bmp $llb8 $llm432v
+iinc $ls144v $ls144v/$imr1;   l1bmrlor $lr136v $lb0
+ixor $lr28 $ln8v $omr1
+iinc $ls144v $ls144v/$imr1
+                              l1bmp $llb0 $llm448v
+
+ixor $lr30 $ln0v $omr1;       l1bmp $llb8 $llm464v
+iinc $lr152v $lr152v/$imr1;   l1bmrlor $ls144v $lb0
+ixor $lr30 $ln8v $omr1
+iinc $lr152v $lr152v/$imr1
+                              l1bmp $llb0 $llm480v
+                              l1bmp $llb8 $llm496v
+
+                              l1bmrlor $lr152v $lb0
+                              nop
+                              nop
+                              l1bmp $llb0 $llm512v
+                              l1bmp $llb8 $llm528v
+
+lpackbit $mabid $t $t
+nop
+
+l1bmrlor $lmt32v32  $lbi
+l1bmrlor $lmt160v32 $lbi; l1bmm $lbi $ln32v
+l1bmrlor $lmt288v32 $lbi; l1bmm $lbi $ln40v
+l1bmrlor $lmt416v32 $lbi; l1bmm $lbi $ln48v
+                          l1bmm $lbi $ln56v
