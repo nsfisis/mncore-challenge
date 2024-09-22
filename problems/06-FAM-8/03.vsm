@@ -24,5 +24,3 @@ fvfma $lm96v $lr0v $ls0v $ln96v
 fvfma $lm104v $lr0v $ls0v $ln104v
 fvfma $lm112v $lr0v $ls0v $ln112v
 fvfma $lm120v $lr0v $ls0v $ln120v
-
-# 別L1Bから持ってくる

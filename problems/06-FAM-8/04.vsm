@@ -1,0 +1,26 @@
+lpackbit $l1bid $t $t
+imm f"8.0" $lr0v
+imm f"64.0" $ls0v
+
+fvfma $lmt0v16 $lr0v $aluf $ln0v
+
+# (128 / 8).times do |i|
+#   j = i * 8
+#   puts "fvfma $lm#{j}v $lr0v $ls0v $ln#{j}v"
+# end
+
+fvfma $lm8v $lr0v $ls0v $ln8v                   ; l1bmd $aluf $lb0
+fvfma $lm16v $lr0v $ls0v $ln16v
+fvfma $lm24v $lr0v $ls0v $ln24v
+fvfma $lm32v $lr0v $ls0v $ln32v                 ; l2bmi@1/0 $lb0   $lb256
+fvfma $lm40v $lr0v $ls0v $ln40v                 ; l2bmi@1/0 $lb64  $lb320
+fvfma $lm48v $lr0v $ls0v $ln48v                 ; l2bmi@1/0 $lb128 $lb384
+fvfma $lm56v $lr0v $ls0v $ln56v                 ; l2bmi@1/0 $lb192 $lb448
+fvfma $lm64v $lr0v $ls0v $ln64v                 ; l2bmi@2/0 $lb0   $lb512
+fvfma $lm72v $lr0v $ls0v $ln72v                 ; l2bmi@2/0 $lb64  $lb576
+fvfma $lm80v $lr0v $ls0v $ln80v                 ; l2bmi@2/0 $lb128 $lb640
+fvfma $lm88v $lr0v $ls0v $ln88v                 ; l2bmi@2/0 $lb192 $lb704
+fvfma $lm96v $lr0v $ls0v $ln96v
+fvfma $lm104v $lr0v $ls0v $ln104v
+fvfma $lm112v $lr0v $ls0v $ln112v               ; l1bmd $lb256 $TODO
+fvfma $lm120v $lr0v $ls0v $ln120v               ; l1bmd $lb512 $TODO
